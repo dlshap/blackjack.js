@@ -7,7 +7,7 @@ function hit() {
 }
 
 function stand() {
-  document.getElementById("msg1").innerHTML = "Stand";
+  document.getElementById("msg1").innerHTML = "Stand down";
   document.getElementById("msg2").innerHTML = "You better bust!"
 }
 
