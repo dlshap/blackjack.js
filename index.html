@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+
+
+<body>
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/blackjack.css" rel="stylesheet">
+  <script src="js/blackjack.js"></script>
+
+
+  <div class="box outer-box ">
+    <h1><strong>Blackjack</strong></h1>
+    <div class = "box message-box">
+      <h3 id="msg1"><></h3>
+      <h4 id="msg2"><></h4>
+    </div>
+
+    <div class="row">
+      <img class="box card-box" src="cardicons/ace_spades_big.png" alt="Ace of clubs">
+      <img class="box card-box" src="cardicons/jack_spades_big.png" alt="Ace of clubs">
+      <br><br>
+      <button class="btn btn-primary btn-deal" onclick="deal()" accesskey="a">De<u>a</u>l</button>
+      <br>
+
+      <label><button class="btn btn-success btn-choice" onclick="hit()" accesskey="h"><u>H</u>it Me</button></label>
+      <label><button class="btn btn-danger btn-choice" onclick="stand()" accesskey="s"><u>S</u>tand</button></label>
+      <label><button class="btn btn-primary btn-choice" onclick="double()" accesskey="b">Dou<u>b</u>le</button></label>
+      <label><button class="btn btn-primary btn-choice" onclick="split()" accesskey="p">S<u>p</u>lit</button></label>
+    </div>
+  </body>
+
+
+<html>
+<body>

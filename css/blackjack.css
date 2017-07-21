@@ -1,0 +1,61 @@
+
+
+.box {
+  border-style: solid;
+  border-color: black;
+  text-align: center;
+  font-family: arial;
+}
+
+.outer-box {
+  border-width: 5px;
+  /*border-radius: 10%;*/
+  padding: 0px 20px 0px 20px;
+  background-color: #006400;
+  height: 1400px;
+}
+
+.card-box {
+  /*background-color: rgb(204,255,255);*/
+  padding: 5px 5px 5px 5px;
+  margin: 0px 20px 0px 20px;
+  /*border-radius: 15%;*/
+  width: 220px;
+  height: 300px;
+}
+
+.message-box {
+  border-radius: 15%;
+  margin: 50px 100px 50px 100px;
+  padding: 10px 0px 10px 0px;
+  border-width: 2px;
+  background-color: LightYellow;
+}
+
+h1 {
+  font-size: 400%;
+  color: White;
+}
+
+h3 {
+  font-size: 300%;
+}
+
+h4 {
+  font-size: 200%;
+}
+
+.btn-deal {
+  padding: 20px 150px 20px 150px;
+  margin: 50px 0px 75px 0px;
+  font-size: 400%;
+  border-radius: 25px;
+}
+
+.btn-choice {
+  padding: 35px 25px 35px 25px;
+  margin-right: 10px;
+  margin-left: 10px;
+  font-size: 300%;
+  border-radius: 15px;
+}
