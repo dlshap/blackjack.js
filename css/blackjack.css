@@ -8,11 +8,11 @@
 }
 
 .outer-box {
-  border-width: 5px;
+  /*border-width: 0px;*/
   /*border-radius: 10%;*/
-  padding: 0px 5px 0px 5px;
+  padding: 0px 0px 100px 0px;
   background-color: #006400;
-  height: 1400px;
+  /*height: 1400px;*/
 }
 
 .card-box {
