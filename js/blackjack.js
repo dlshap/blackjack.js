@@ -1,3 +1,4 @@
+
 function deal() {
  document.getElementById("msg1").innerHTML = "Dealing";  document.getElementById("msg2").innerHTML = "...";
 }
