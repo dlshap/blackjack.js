@@ -51,6 +51,12 @@ h4 {
   margin: 10px 0px 25px 0px;
   font-size: 400%;
   border-radius: 25px;
+  background-color: #337ab7;
+  /*background-color: Red;*/
+
+  /*background-color: #286090;
+  border-color: #204d74;
+  color: white;*/
 }
 
 .btn-choice {
