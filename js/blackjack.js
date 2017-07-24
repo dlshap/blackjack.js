@@ -1,17 +1,36 @@
-const online = false;
-if (online)
+"use strict";
+const USINGCODEPEN = false;
+var cardFileURL;
+
+if (USINGCODEPEN)
   cardFileURL = "http://www.dlsa.com/blackjack/";
 else {
   cardFileURL = "";
 }
 
+var gameOptions = {
+  handTypes: ["Pairs", "Hard Hands", "Soft Hands"]
+};
+
+//------------------------------------------------------------------------------
 function testDeal() {
   var num = Math.floor(Math.random()*13)+1;
   var suit = Math.floor(Math.random()*4)+1;
-  card = new Card(num, suit);
+  var card = new Card(num, suit);
   card.setValue(num, suit);
   showMsg(2, card.getFileName());
-  showCard(card.getFileName());
+  showCard("dealerCard", card.getFileName());
+}
+
+document.addEventListener("DOMContentLoaded", function(event) {
+  initTable()
+});
+
+function initTable() {
+  showCard("dealerCard","b1fv_big.png");
+  for (var i = 1; i <= 2; i++) {
+    showCard("playerCard"+i,"b1fv_big.png");
+  }
 }
 
 function showMsg(msgNum, msg) {
@@ -20,39 +39,10 @@ function showMsg(msgNum, msg) {
   document.getElementById(msgId).innerHTML = msg;
 }
 
-function showCard(cardFileName) {
+function showCard(whichCard, cardFileName) {
   cardFileName = cardFileURL+"cardicons/" + cardFileName;
-  document.getElementById("dealerCard").src = cardFileName;
+  document.getElementById(whichCard).src = cardFileName;
 }
-
-var Card = function(num, suit) {
-
-  this.setFileName = function(value) {
-    var numbers = ["Ace","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Jack","Queen","King"];
-    var suits = ["Spades","Hearts","Diamonds","Clubs"];
-    this.fileName = numbers[value[0]-1].toLowerCase()+"_"+suits[value[1]-1].toLowerCase()+"_big.png";
-  }
-
-  this.getFileName = function() {
-    return this.fileName;
-  }
-
-  this.setValue = function(num,suit) {
-    this.value = [num, suit];
-
-  }
-
-  this.getValue = function() {
-    return this.value;
-  }
-
-  // Constructor
-  this.value = [num, suit];
-  this.setFileName(this.value);
-
-};
-
-
 
 function deal() {
   showMsg(1, "Dealing now...");
@@ -61,8 +51,6 @@ function deal() {
 
 function hit() {
   document.getElementById("msg1").innerHTML = "Hit me!";
-  var card = new Card(1, "Hearts");
-  document.getElementById("msg2").innerHTML = card.getValue()[1];
 }
 
 function stand() {
