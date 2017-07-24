@@ -40,7 +40,7 @@ function showMsg(msgNum, msg) {
 }
 
 function showCard(whichCard, cardFileName) {
-  cardFileName = cardFileURL+"cardicons/" + cardFileName;
+  cardFileName = cardFileURL+"images/cardicons/" + cardFileName;
   document.getElementById(whichCard).src = cardFileName;
 }
 
