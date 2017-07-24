@@ -1,3 +1,10 @@
+const online = false;
+if (online)
+  cardFileURL = "http://www.dlsa.com/blackjack/";
+else {
+  cardFileURL = "";
+}
+
 function testDeal() {
   var num = Math.floor(Math.random()*13)+1;
   var suit = Math.floor(Math.random()*4)+1;
@@ -14,7 +21,7 @@ function showMsg(msgNum, msg) {
 
 function showCard(cardFileName) {
   console.log(cardFileName);
-  cardFileName = "http://www.dlsa.com/blackjack/cardicons/" + cardFileName;
+  cardFileName = cardFileURL+"cardicons/" + cardFileName;
   document.getElementById("dealerCard").src = cardFileName;
 }
 
