@@ -1,11 +1,31 @@
+function testDeal() {
+  var num = Math.floor(Math.random()*13)+1;
+  var suit = Math.floor(Math.random()*4)+1;
+  var card = new Card(num, suit);
+  showMsg(2, card.getFileName());
+  showCard(card.getFileName());
+}
+
+function showMsg(msgNum, msg) {
+  // display msg in message area: msg1 or msg2
+  var msgId = "msg"+msgNum.toString();
+  document.getElementById(msgId).innerHTML = msg;
+}
+
+function showCard(cardFileName) {
+  console.log(cardFileName);
+  cardFileName = "http://www.dlsa.com/blackjack/cardicons/" + cardFileName;
+  document.getElementById("dealerCard").src = cardFileName;
+}
 
 var Card = function(num, suit) {
+  var numbers = ["Ace","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Jack","Queen","King"];
+  var suits = ["Spades","Hearts","Diamonds","Clubs"];
   this.value = [num, suit];
-  this.name = suit;
-  console.log(this.value[0]);
+  this.fileName = numbers[num-1].toLowerCase()+"_"+suits[suit-1].toLowerCase()+"_big.png";
 
-  this.getName = function() {
-    return this.name;
+  this.getFileName = function() {
+    return this.fileName;
   }
 
   this.setValue = function(num,suit) {
@@ -17,8 +37,11 @@ var Card = function(num, suit) {
   }
 };
 
+
+
 function deal() {
- document.getElementById("msg1").innerHTML = "Dealing";  document.getElementById("msg2").innerHTML = "...";
+  document.getElementById("msg1").innerHTML = "Dealing";
+  testDeal();
 }
 
 function hit() {
