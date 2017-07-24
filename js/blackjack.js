@@ -5,12 +5,11 @@ else {
   cardFileURL = "";
 }
 
-var num = 1;
-var suit = 1;
-
 function testDeal() {
   var num = Math.floor(Math.random()*13)+1;
   var suit = Math.floor(Math.random()*4)+1;
+  card = new Card(num, suit);
+  card.setValue(num, suit);
   showMsg(2, card.getFileName());
   showCard(card.getFileName());
 }
@@ -22,16 +21,17 @@ function showMsg(msgNum, msg) {
 }
 
 function showCard(cardFileName) {
-  console.log(cardFileName);
   cardFileName = cardFileURL+"cardicons/" + cardFileName;
   document.getElementById("dealerCard").src = cardFileName;
 }
 
 var Card = function(num, suit) {
-  var numbers = ["Ace","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Jack","Queen","King"];
-  var suits = ["Spades","Hearts","Diamonds","Clubs"];
-  this.value = [num, suit];
-  this.fileName = numbers[num-1].toLowerCase()+"_"+suits[suit-1].toLowerCase()+"_big.png";
+
+  this.setFileName = function(value) {
+    var numbers = ["Ace","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Jack","Queen","King"];
+    var suits = ["Spades","Hearts","Diamonds","Clubs"];
+    this.fileName = numbers[value[0]-1].toLowerCase()+"_"+suits[value[1]-1].toLowerCase()+"_big.png";
+  }
 
   this.getFileName = function() {
     return this.fileName;
@@ -39,11 +39,17 @@ var Card = function(num, suit) {
 
   this.setValue = function(num,suit) {
     this.value = [num, suit];
+
   }
 
   this.getValue = function() {
     return this.value;
   }
+
+  // Constructor
+  this.value = [num, suit];
+  this.setFileName(this.value);
+
 };
 
 
