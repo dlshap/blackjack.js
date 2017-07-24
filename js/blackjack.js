@@ -5,10 +5,12 @@ else {
   cardFileURL = "";
 }
 
+var num = 1;
+var suit = 1;
+
 function testDeal() {
   var num = Math.floor(Math.random()*13)+1;
   var suit = Math.floor(Math.random()*4)+1;
-  var card = new Card(num, suit);
   showMsg(2, card.getFileName());
   showCard(card.getFileName());
 }
@@ -47,7 +49,7 @@ var Card = function(num, suit) {
 
 
 function deal() {
-  document.getElementById("msg1").innerHTML = "Dealing";
+  showMsg(1, "Dealing now...");
   testDeal();
 }
 
