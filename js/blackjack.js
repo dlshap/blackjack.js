@@ -6,6 +6,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
   initTable()
 });
 
+function initTable() {
+  // showMsg(1,"test1");
+  // showMsg(2,"test2");
+  showCardBacks();
+  prepareShoe();
+}
+
 function showCardBacks() {
   var card = new Card(0,0);
   showCard("dealerCard", card);
@@ -17,11 +24,6 @@ function showCardBacks() {
 function prepareShoe() {
   shoe = new Shoe(config.noOfDecks);
   shoe.shuffle();
-}
-
-function initTable() {
-  showCardBacks();
-  prepareShoe();
 }
 
 var tableController = {
