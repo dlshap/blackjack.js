@@ -19,9 +19,10 @@ function showCard(whichCard, card) {
 function Shoe(numDecks) {
   this.shoeCards = [];
   this.loadShoe = function() {
-    for (var i = 0; i < numDecks; i++) {
-      for (var j = 1; j <= 4; j++) {
-        for (var k = 1; k <= 13; k++) {
+    var i, j, k;
+    for (i = 0; i < numDecks; i++) {
+      for (j = 1; j <= 4; j++) {
+        for (k = 1; k <= 13; k++) {
           var card = new Card(k, i);
           addCard(card);
         }
