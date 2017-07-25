@@ -16,6 +16,35 @@ function showCard(whichCard, card) {
   document.getElementById(whichCard).src = card.getFileName();
 }
 
+function Shoe(numDecks) {
+  this.shoeCards = [];
+  this.loadShoe = function() {
+    for (var i = 0; i < numDecks; i++) {
+      for (var j = 1; j <= 4; j++) {
+        for (var k = 1; k <= 13; k++) {
+          var card = new Card(k, i);
+          addCard(card);
+        }
+      }
+    }
+  }
+  this.addCard = function(card) {
+    shoeCards.push(card);
+  }
+  this.getCard = function() {
+    return shoeCards.pop();
+  }
+  this.shuffle = function() {
+    var j, x, i;
+    for (i = shoeCards.length; i; i--) {
+      j = Math.floor(Math.random() * i);
+      x = shoeCards[i - 1];
+      shoeCards[a - 1] = shoeCards[j];
+      shoeCards[j] = x;
+    }
+  }
+}
+
 // Card Object (class)
 function Card(num, suit) {
   this.setFileName = function(value) {
