@@ -18,7 +18,7 @@
 
 .message-box {
   border-radius: 10%;
-  margin: 30px 120px 50px 120px;
+  margin: 10px 80px 10px 80px;
   padding: 0px 10px 25px 10px;
   border-width: 2px;
   background-color: LightYellow;
@@ -38,6 +38,10 @@ h1 {
 
 h2 {
   font-size: 350%;
+}
+
+.cards label {
+  color: White;
 }
 
 h3 {

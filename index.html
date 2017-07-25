@@ -13,22 +13,27 @@
     <h3 id="msg2"><br></h4>
   </div>
 
-  <div class="row">
-    <img id="dealerCard" class="box card-box" src="#" alt="Dealer's Up Card">
-    <br>
-    <img id="playerCard1" class="box card-box" src="#" alt="Player Card 1">
-    <img id="playerCard2" class="box card-box" src="#" alt="Player Card 2">
-    <br><br>
-    <button class="btn btn-primary btn-deal" onclick="deal()" accesskey="a">De<u>a</u>l</button>
-    <br>
-    <button class="btn btn-success btn-choice" onclick="hit()" accesskey="h"><u>H</u>it Me</button>
-    <button class="btn btn-danger btn-choice" onclick="stand()" accesskey="s"><u>S</u>tand</button>
-    <button class="btn btn-primary btn-choice" onclick="double()" accesskey="b">Dou<u>b</u>le</button>
-    <button class="btn btn-primary btn-choice" onclick="split()" accesskey="p">S<u>p</u>lit</button>
+  <div class="row cards">
+    <div class="dealer-cards">
+      <label><h3>Dealer</h3><label>
+      <img id="dealerCard" class="box card-box" src="#" alt="Dealer's Up Card">
+    </div>
+    <div class="player-cards">
+      <label><h3>Player</h3><label>
+      <img id="playerCard1" class="box card-box" src="#" alt="Player Card 1">
+      <img id="playerCard2" class="box card-box" src="#" alt="Player Card 2">
+      <br>
+      <button class="btn btn-primary btn-deal" onclick="deal()" accesskey="a">De<u>a</u>l</button>
+      <br>
+      <button class="btn btn-success btn-choice" onclick="hit()" accesskey="h"><u>H</u>it Me</button>
+      <button class="btn btn-danger btn-choice" onclick="stand()" accesskey="s"><u>S</u>tand</button>
+      <button class="btn btn-primary btn-choice" onclick="double()" accesskey="b">Dou<u>b</u>le</button>
+      <button class="btn btn-primary btn-choice" onclick="split()" accesskey="p">S<u>p</u>lit</button>
+    </div>
   </div>
   <div>
     <div id="drill-types">
-      <label style="margin-top: 30px;">Drill on:</label>
+      <label style="margin-top: 50px;">Drill on:</label>
       <div id="choices">
         <input type="checkbox" id="drill-pairs">
         <label for="radio-pairs">Pairs</label></input>
