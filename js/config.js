@@ -5,5 +5,5 @@ var config = {
   cardFaceDir: "SVG-cards-1.3/",
   cardFaceExt: ".svg",
   noOfDecks: 1,
-  deckMix: ["pairs"]
+  deckMix: []    // pairs, hard, soft
 };

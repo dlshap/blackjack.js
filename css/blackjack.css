@@ -25,6 +25,12 @@
   width: auto;
 }
 
+#drill-types label {
+  color: White;
+  font-size: 250%;
+  margin-right: 25px;
+}
+
 h1 {
   font-size: 400%;
   color: White;
@@ -38,12 +44,15 @@ h3 {
   font-size: 300%;
 }
 
+h4 {
+  font-size: 250%;
+}
+
 .btn-deal {
   padding: 20px 150px 20px 150px;
   margin: 40px 0px 40px 0px;
   font-size: 400%;
   border-radius: 25px;
-  background-color: #337ab7;
 }
 
 .btn-choice {

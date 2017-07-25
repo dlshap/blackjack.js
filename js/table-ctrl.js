@@ -6,12 +6,12 @@ function showMsg(msgNum, msg) {
 
 function deal() {
   showMsg(1, "Dealing now...");
-  tableController.deal();
+  gameController.deal();
 }
 
 function hit() {
   showMsg(1, "Hit me!");
-  showMsg(2, "Shuffling deck...");
+  gameController.hit();
 }
 
 function stand() {
@@ -25,4 +25,12 @@ function double() {
 
 function split() {
   document.getElementById("msg1").innerHTML = "Split 'em!";
+}
+
+function getOption(whichOption) {
+  return document.getElementById(whichOption).checked;
+}
+
+function setOption(whichOption, value) {
+  document.getElementById(whichOption).checked = value;
 }
