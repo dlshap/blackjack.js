@@ -1,16 +1,14 @@
 "use strict";
 
-var gameOptions = {
-  handTypes: ["Pairs", "Hard Hands", "Soft Hands"]
-};
+var shoe;
 
-//------------------------------------------------------------------------------
 function testDeal() {
   var num = Math.floor(Math.random()*13)+1;
   var suit = Math.floor(Math.random()*4)+1;
   var card = new Card(num, suit);
   showMsg(2, card.getFileName());
   showCard("dealerCard", card);
+  showMsg(1, "shoe size: "+shoe.length());
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
@@ -23,6 +21,7 @@ function initTable() {
   for (var i = 1; i <= 2; i++) {
     showCard("playerCard"+i,card);
   }
+  shoe = new Shoe(config.noOfDecks);
 }
 
 function showMsg(msgNum, msg) {

@@ -1,21 +1,22 @@
-const USINGCODEPEN = false;
-/*------------------------------------------------------------------------------------*/
 function showCard(whichCard, card) {
   document.getElementById(whichCard).src = card.getFileName();
 }
 
 function Shoe(numDecks) {
-  this.shoeCards = [];
+  var shoeCards = [];
   this.loadShoe = function() {
     var i, j, k;
     for (i = 0; i < numDecks; i++) {
       for (j = 1; j <= 4; j++) {
         for (k = 1; k <= 13; k++) {
-          var card = new Card(k, i);
-          addCard(card);
+          var card = new Card(k, j);
+          this.addCard(card);
         }
       }
     }
+  }
+  this.length = function() {
+    return shoeCards.length;
   }
   this.addCard = function(card) {
     shoeCards.push(card);
@@ -32,6 +33,8 @@ function Shoe(numDecks) {
       shoeCards[j] = x;
     }
   }
+  // Constructor
+  this.loadShoe();
 }
 
 // Card Object (class)
