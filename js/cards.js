@@ -15,6 +15,15 @@ function Shoe(numDecks) {
       }
     }
   }
+  this.shuffle = function() {
+    var x, i, j;
+    for (i = shoeCards.length; i; i--) {
+      j = Math.floor(Math.random() * i);
+      x = shoeCards[i - 1];
+      shoeCards[i - 1] = shoeCards[j];
+      shoeCards[j] = x;
+    }
+  }
   this.length = function() {
     return shoeCards.length;
   }
@@ -22,16 +31,9 @@ function Shoe(numDecks) {
     shoeCards.push(card);
   }
   this.getCard = function() {
+    if (shoeCards.length === 0)
+      this.loadShoe();
     return shoeCards.pop();
-  }
-  this.shuffle = function() {
-    var j, x, i;
-    for (i = shoeCards.length; i; i--) {
-      j = Math.floor(Math.random() * i);
-      x = shoeCards[i - 1];
-      shoeCards[a - 1] = shoeCards[j];
-      shoeCards[j] = x;
-    }
   }
   // Constructor
   this.loadShoe();
