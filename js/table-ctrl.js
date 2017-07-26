@@ -4,6 +4,10 @@ function showMsg(msgNum, msg) {
   document.getElementById(msgId).innerHTML = msg;
 }
 
+function showCard(whichCard, cardFileName) {
+  document.getElementById(whichCard).src = cardFileName;
+}
+
 function deal() {
   showMsg(1, "Dealing now...");
   gameController.deal();

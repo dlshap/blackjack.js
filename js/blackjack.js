@@ -6,6 +6,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
   initTable()
 });
 
+function displayCard(card, where) {
+  showCard(where, card.getFileName());
+}
+
 function initTable() {
   showCardBacks();
   setInitialOptions();
@@ -16,7 +20,7 @@ function setInitialOptions() {
   setOption("drill-pairs", true);
 }
 
-function getOptions() {
+function buildOptions() {
   config.deckMix = [];
   if (getOption("drill-pairs")) {
     config.deckMix.push("pairs");
@@ -31,9 +35,9 @@ function getOptions() {
 
 function showCardBacks() {
   var card = new Card(0,0);
-  showCard("dealerCard", card);
+  displayCard(card, "dealerCard");
   for (var i = 1; i <= 2; i++) {
-    showCard("playerCard"+i,card);
+    displayCard(card, "playerCard" + i);
   }
 }
 
@@ -44,28 +48,50 @@ function prepareShoe() {
 
 var gameController = {
   dealACard: function(toWhere) {
-    var nextCard = shoe.getCard();
-    showCard(toWhere, nextCard);
-    return nextCard;
+    var card = shoe.getCard();
+    displayCard(card, toWhere);
+    return card;
   },
-  cheatACard: function(firstCard, toWhere) {
-    if (getOption("drill-pairs")) {
-      var num = firstCard.getValue()[0];
+  cheatACard: function(num) {
       var suit = Math.floor(Math.random() * 4)+1;
-      var nextCard = new Card(num, suit);
-      showCard(toWhere, nextCard);
-    }
+      var cheatCard = new Card(num, suit);
+      return cheatCard;
   },
-  deal: function() {
-    getOptions();
+  dealDealerCard: function() {
     // Deal the dealer a card
     this.dealACard("dealerCard");
-    // Deal players first card
-    var firstCard = this.dealACard("playerCard1");
-    // if only one deckMix option (drill), cheat the 2nd card
+  },
+  deal: function() {
+    buildOptions();
+    this.dealDealerCard();
+    this.dealPlayerHand();
+  },
+  dealPlayerHand: function() {
     if (config.deckMix.length === 1)
-      this.cheatACard(firstCard, "playerCard2");
+      this.dealCheat();
     else
-      this.dealACard("playerCard2");
+      this.dealNormal();
+  },
+  dealCheat: function() {
+    if (config.deckMixContains("pairs"))
+      this.dealPair();
+    else if (config.deckMixContains("soft"))
+      this.dealSoft();
+    else dealNormal();
+  },
+  dealNormal: function() {
+    this.dealACard("player1");
+    this.dealACard("player2");
+  },
+  dealPair: function() {
+    var card = this.dealACard("playerCard1");
+    displayCard(card, "playerCard1");
+    card = this.cheatACard(card.getValue()[0]);
+    displayCard(card, "playerCard2");
+  },
+  dealSoft: function() {
+    var card = this.cheatACard(1);
+    displayCard(card, "playerCard1");
+    this.dealACard("playerCard2");
   }
 };

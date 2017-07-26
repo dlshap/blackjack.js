@@ -1,7 +1,3 @@
-function showCard(whichCard, card) {
-  document.getElementById(whichCard).src = card.getFileName();
-}
-
 function Shoe(numDecks) {
   var shoeCards = [];
   this.loadShoe = function() {
