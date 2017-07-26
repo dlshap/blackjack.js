@@ -1,3 +1,7 @@
+function displayCard(card, where) {
+  showCard(where, card.getFileName());
+}
+
 function Shoe(numDecks) {
   var shoeCards = [];
   this.loadShoe = function() {

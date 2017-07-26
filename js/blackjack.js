@@ -2,14 +2,6 @@
 
 var shoe;
 
-document.addEventListener("DOMContentLoaded", function(event) {
-  initTable()
-});
-
-function displayCard(card, where) {
-  showCard(where, card.getFileName());
-}
-
 function initTable() {
   showCardBacks();
   setInitialOptions();
@@ -80,8 +72,8 @@ var gameController = {
     else dealNormal();
   },
   dealNormal: function() {
-    this.dealACard("player1");
-    this.dealACard("player2");
+    this.dealACard("playerCard1");
+    this.dealACard("playerCard2");
   },
   dealPair: function() {
     var card = this.dealACard("playerCard1");

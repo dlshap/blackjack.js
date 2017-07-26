@@ -1,3 +1,21 @@
+document.addEventListener("DOMContentLoaded", function(event) {
+  initTable();
+  addClickListeners();
+});
+
+function addClickListeners() {
+  document.getElementById("drill-pairs").addEventListener("click",
+    function() {deckMixOptionChanged("pairs"); });
+  document.getElementById("drill-hard").addEventListener("click",
+    function() {deckMixOptionChanged("hard"); });
+  document.getElementById("drill-soft").addEventListener("click",
+    function() {deckMixOptionChanged("soft"); });
+}
+
+function deckMixOptionChanged(which) {
+  showMsg(1, which);
+}
+
 function showMsg(msgNum, msg) {
   // display msg in message area: msg1 or msg2
   var msgId = "msg"+msgNum.toString();
