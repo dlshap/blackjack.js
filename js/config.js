@@ -5,35 +5,35 @@ var config = {
   cardFaceDir: "SVG-cards-1.3/",
   cardFaceExt: ".svg",
   noOfDecks: 1,
-  options: deckMix    // pairs, hard, soft
+  options: new Options()    // pairs, hard, soft
 };
 
-var deckMix = {
-  options: [],
-  deckMixContains: function(what) {
-    for (var i = 0; i < this.options.length; i++) {
-      if (this.options[i] === what)
+function Options() {
+  var options = [];
+  this.findOption = function(what) {
+    for (var i = 0; i < options.length; i++) {
+      if (options[i] === what)
         return i;
     }
     return -1;
-  },
-  addToDeckMix: function(what) {
-    if (this.deckMixContains(what) === -1)
-      this.options.push(what);
   }
-  removeFromDeckMix: function(what) {
-    var where = this.deckMixContains(what);
-    if (where !=== -1)
-      this.options.splice(where, 1);
+  this.addOption = function(what) {
+    if (this.findOption(what) === -1)
+      options.push(what);
+  }
+  this.removeOption = function(what) {
+    var where = this.findOption(what);
+    if (where !== -1)
+      options.splice(where, 1);
   }
 }
 
-function changeDeckMix(option, value) {
+function changeOptions(option, value) {
   if (value) {
-    config.deckMix.addToDeckMix(option);
+    config.options.addOption(option);
     showMsg(2, "adding " + option)
   } else {
-    config.deckMix.removeFromDeckMix(option);
-    showMsg(2, "removing" + option);
+    config.options.removeOption(option);
+    showMsg(2, "removing " + option);
   }
 }

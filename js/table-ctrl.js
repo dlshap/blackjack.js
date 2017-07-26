@@ -12,17 +12,17 @@ function addClickListeners() {
     function() {optionChanged("drill-soft"); });
 }
 
-function optionClicked(optionId) {
+function optionChanged(optionId) {
   var optionClicked = getOption(optionId);
   switch (optionId) {
     case "drill-pairs":
-      changeDeckMix("pairs", optionClicked);
+      changeOptions("pairs", optionClicked);
       break;
     case "drill-hard":
-      changeDeckMix("hard", optionClicked);
+      changeOptions("hard", optionClicked);
       break;
     case "drill-soft":
-      changeDeckMix("soft",optionClicked);
+      changeOptions("soft",optionClicked);
       break;
   }
 }
