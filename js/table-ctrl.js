@@ -5,15 +5,26 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 function addClickListeners() {
   document.getElementById("drill-pairs").addEventListener("click",
-    function() {deckMixOptionChanged("pairs"); });
+    function() {optionChanged("drill-pairs"); });
   document.getElementById("drill-hard").addEventListener("click",
-    function() {deckMixOptionChanged("hard"); });
+    function() {optionChanged("drill-hard"); });
   document.getElementById("drill-soft").addEventListener("click",
-    function() {deckMixOptionChanged("soft"); });
+    function() {optionChanged("drill-soft"); });
 }
 
-function deckMixOptionChanged(which) {
-  showMsg(1, which);
+function optionClicked(optionId) {
+  var optionClicked = getOption(optionId);
+  switch (optionId) {
+    case "drill-pairs":
+      changeDeckMix("pairs", optionClicked);
+      break;
+    case "drill-hard":
+      changeDeckMix("hard", optionClicked);
+      break;
+    case "drill-soft":
+      changeDeckMix("soft",optionClicked);
+      break;
+  }
 }
 
 function showMsg(msgNum, msg) {

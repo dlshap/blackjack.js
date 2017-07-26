@@ -5,12 +5,35 @@ var config = {
   cardFaceDir: "SVG-cards-1.3/",
   cardFaceExt: ".svg",
   noOfDecks: 1,
-  deckMix: [],    // pairs, hard, soft
-  deckMixContains: function(what) {
-    for (var i = 0; i < this.deckMix.length; i++) {
-      if (this.deckMix[i] === what)
-        return true;
-    }
-    return false;
-  }
+  options: deckMix    // pairs, hard, soft
 };
+
+var deckMix = {
+  options: [],
+  deckMixContains: function(what) {
+    for (var i = 0; i < this.options.length; i++) {
+      if (this.options[i] === what)
+        return i;
+    }
+    return -1;
+  },
+  addToDeckMix: function(what) {
+    if (this.deckMixContains(what) === -1)
+      this.options.push(what);
+  }
+  removeFromDeckMix: function(what) {
+    var where = this.deckMixContains(what);
+    if (where !=== -1)
+      this.options.splice(where, 1);
+  }
+}
+
+function changeDeckMix(option, value) {
+  if (value) {
+    config.deckMix.addToDeckMix(option);
+    showMsg(2, "adding " + option)
+  } else {
+    config.deckMix.removeFromDeckMix(option);
+    showMsg(2, "removing" + option);
+  }
+}
