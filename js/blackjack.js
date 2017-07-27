@@ -12,18 +12,18 @@ function setInitialOptions() {
   setOption("drill-pairs", true);
 }
 
-function buildOptions() {
-  config.deckMix = [];
-  if (getOption("drill-pairs")) {
-    config.deckMix.push("pairs");
-  }
-  if (getOption("drill-hard")) {
-    config.deckMix.push("hard");
-  }
-  if (getOption("drill-soft")) {
-    config.deckMix.push("soft");
-  }
-}
+// function buildOptions() {
+//   config.deckMix = [];
+//   if (getOption("drill-pairs")) {
+//     config.deckMix.push("pairs");
+//   }
+//   if (getOption("drill-hard")) {
+//     config.deckMix.push("hard");
+//   }
+//   if (getOption("drill-soft")) {
+//     config.deckMix.push("soft");
+//   }
+// }
 
 function showCardBacks() {
   var card = new Card(0,0);
@@ -54,20 +54,19 @@ var gameController = {
     this.dealACard("dealerCard");
   },
   deal: function() {
-    buildOptions();
     this.dealDealerCard();
     this.dealPlayerHand();
   },
   dealPlayerHand: function() {
-    if (config.deckMix.length === 1)
+    if (config.options.length() === 1)
       this.dealCheat();
     else
       this.dealNormal();
   },
   dealCheat: function() {
-    if (config.deckMixContains("pairs"))
+    if (config.options.findOption("pairs") !== -1)
       this.dealPair();
-    else if (config.deckMixContains("soft"))
+    else if (config.options.findOption("soft") !== -1)
       this.dealSoft();
     else dealNormal();
   },

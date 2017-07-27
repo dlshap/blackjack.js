@@ -26,6 +26,9 @@ function Options() {
     if (where !== -1)
       options.splice(where, 1);
   }
+  this.length = function() {
+    return options.length;
+  }
 }
 
 function changeOptions(option, value) {
