@@ -3,7 +3,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
   addClickListeners();
 });
 
-function addClickListeners() {
+
+function addClickListeners () {
   document.getElementById("drill-pairs").addEventListener("click",
     function() {optionChanged("drill-pairs"); });
   document.getElementById("drill-hard").addEventListener("click",
@@ -12,58 +13,33 @@ function addClickListeners() {
     function() {optionChanged("drill-soft"); });
 }
 
-function optionChanged(optionId) {
-  var optionClicked = getOption(optionId);
-  switch (optionId) {
-    case "drill-pairs":
-      changeOptions("pairs", optionClicked);
-      break;
-    case "drill-hard":
-      changeOptions("hard", optionClicked);
-      break;
-    case "drill-soft":
-      changeOptions("soft",optionClicked);
-      break;
-  }
-}
-
-function showMsg(msgNum, msg) {
-  // display msg in message area: msg1 or msg2
-  var msgId = "msg"+msgNum.toString();
-  document.getElementById(msgId).innerHTML = msg;
-}
-
-function showCard(whichCard, cardFileName) {
-  document.getElementById(whichCard).src = cardFileName;
+function optionChanged (optionId) {
+  var optionMap = {
+    "drill-pairs": "pairs",
+    "drill-hard": "hard",
+    "drill-soft": "soft"
+  };
+  var optionClicked = document.getElementById(optionId).checked;
+  config.drillTypes.change(optionMap[optionId], optionClicked);
 }
 
 function deal() {
-  showMsg(1, "Dealing now...");
+  tableUI.showMsg(1, "Dealing now...");
   gameController.deal();
 }
 
 function hit() {
-  showMsg(1, "Hit me!");
   gameController.hit();
 }
 
 function stand() {
-  document.getElementById("msg1").innerHTML = "Stand down";
-  document.getElementById("msg2").innerHTML = "You better bust!"
+  gameController.stand();
 }
 
 function double() {
-  document.getElementById("msg1").innerHTML = "Double Down";
+  gameController.double();
 }
 
 function split() {
-  document.getElementById("msg1").innerHTML = "Split 'em!";
-}
-
-function getOption(whichOption) {
-  return document.getElementById(whichOption).checked;
-}
-
-function setOption(whichOption, value) {
-  document.getElementById(whichOption).checked = value;
+  gameController.split();
 }

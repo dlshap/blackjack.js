@@ -1,10 +1,16 @@
+<!DOCTYPE html>
+
 <body>
 <link href="vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="css/blackjack.css" rel="stylesheet">
 <script src="js/config.js"></script>
+<script src="js/strategy.js"></script>
+<script src="js/dealer.js"></script>
+<script src="js/gamecontroller.js"></script>
+<script src="js/table-ctrl.js"></script>
+<script src="js/tableUI.js"></script>
 <script src="js/cards.js"></script>
 <script src="js/blackjack.js"></script>
-<script src="js/table-ctrl.js"></script>
 
 <div class="box outer-box ">
   <h1 style="text-shadow: 3px 3px grey;"><strong>Blackjack</strong></h1>
@@ -12,7 +18,6 @@
     <h2 id="msg1"><br></h3>
     <h3 id="msg2"><br></h4>
   </div>
-
   <div class="row cards">
     <div class="dealer-cards">
       <label><h3>Dealer</h3><label>
@@ -23,8 +28,11 @@
       <img id="playerCard1" class="box card-box" src="#" alt="Player Card 1">
       <img id="playerCard2" class="box card-box" src="#" alt="Player Card 2">
       <br>
-      <button class="btn btn-primary btn-deal" onclick="deal()" accesskey="a">De<u>a</u>l</button>
-      <br>
+    </div>
+  </div>
+  <div class="buttons">
+    <button class="btn btn-primary btn-deal" onclick="deal()" accesskey="a">De<u>a</u>l</button>
+    <div class="choice-buttons">
       <button class="btn btn-success btn-choice" onclick="hit()" accesskey="h"><u>H</u>it Me</button>
       <button class="btn btn-danger btn-choice" onclick="stand()" accesskey="s"><u>S</u>tand</button>
       <button class="btn btn-primary btn-choice" onclick="double()" accesskey="b">Dou<u>b</u>le</button>
@@ -32,7 +40,7 @@
     </div>
   </div>
   <div>
-    <div id="drill-types">
+    <div class="drill-types">
       <label style="margin-top: 50px;">Drill on:</label>
       <div id="choices">
         <input type="checkbox" id="drill-pairs">

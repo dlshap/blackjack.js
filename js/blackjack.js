@@ -1,24 +1,29 @@
 "use strict";
 
 var shoe;
+// var strategy;
+// var gameController = new GameController();
+
+function showCardBacks() {
+  //do this first so no delay on screen
+  var card = new Card(0,0);
+  card.display("dealerCard");
+  for (var i = 1; i <= 2; i++) {
+    card.display("playerCard" + i);
+  }
+}
 
 function initTable() {
   showCardBacks();
-  setInitialOptions();
+  setInitialDrillTypes();
   prepareShoe();
+  // loadGameController();
+  // loadStrategy();
 }
 
-function setInitialOptions() {
-  setOption("drill-pairs", true);
-  config.options.addOption("pairs");
-}
-
-function showCardBacks() {
-  var card = new Card(0,0);
-  displayCard(card, "dealerCard");
-  for (var i = 1; i <= 2; i++) {
-    displayCard(card, "playerCard" + i);
-  }
+function setInitialDrillTypes() {
+  tableUI.setDrillType("drill-pairs", true);
+  config.drillTypes.addDrillType("pairs");
 }
 
 function prepareShoe() {
@@ -26,51 +31,10 @@ function prepareShoe() {
   shoe.shuffle();
 }
 
-var gameController = {
-  dealACard: function(toWhere) {
-    var card = shoe.getCard();
-    displayCard(card, toWhere);
-    return card;
-  },
-  cheatACard: function(num) {
-      var suit = Math.floor(Math.random() * 4)+1;
-      var cheatCard = new Card(num, suit);
-      return cheatCard;
-  },
-  dealDealerCard: function() {
-    // Deal the dealer a card
-    this.dealACard("dealerCard");
-  },
-  deal: function() {
-    this.dealDealerCard();
-    this.dealPlayerHand();
-  },
-  dealPlayerHand: function() {
-    if (config.options.length() === 1)
-      this.dealCheat();
-    else
-      this.dealNormal();
-  },
-  dealCheat: function() {
-    if (config.options.findOption("pairs") !== -1)
-      this.dealPair();
-    else if (config.options.findOption("soft") !== -1)
-      this.dealSoft();
-    else dealNormal();
-  },
-  dealNormal: function() {
-    this.dealACard("playerCard1");
-    this.dealACard("playerCard2");
-  },
-  dealPair: function() {
-    var card = this.dealACard("playerCard1");
-    displayCard(card, "playerCard1");
-    card = this.cheatACard(card.getValue()[0]);
-    displayCard(card, "playerCard2");
-  },
-  dealSoft: function() {
-    var card = this.cheatACard(1);
-    displayCard(card, "playerCard1");
-    this.dealACard("playerCard2");
-  }
-};
+// function loadGameController() {
+//   gameController = new GameController();
+// }
+
+// function loadStrategy() {
+//   strategy = new Strategy();
+// }

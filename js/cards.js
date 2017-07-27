@@ -1,7 +1,3 @@
-function displayCard(card, where) {
-  showCard(where, card.getFileName());
-}
-
 function Shoe(numDecks) {
   var shoeCards = [];
   this.loadShoe = function() {
@@ -54,6 +50,9 @@ function Card(num, suit) {
         suits[value[1]-1].toLowerCase() +
         config.cardFaceExt;
     }
+  }
+  this.display = function(where) {
+      tableUI.showCard(where, this.getFileName());
   }
   this.getFileName = function() {
     return this.fileName;
