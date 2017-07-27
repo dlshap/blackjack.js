@@ -10,8 +10,20 @@ function initTable() {
 
 function setInitialOptions() {
   setOption("drill-pairs", true);
-  config.options.addOption("pairs");
 }
+
+// function buildOptions() {
+//   config.deckMix = [];
+//   if (getOption("drill-pairs")) {
+//     config.deckMix.push("pairs");
+//   }
+//   if (getOption("drill-hard")) {
+//     config.deckMix.push("hard");
+//   }
+//   if (getOption("drill-soft")) {
+//     config.deckMix.push("soft");
+//   }
+// }
 
 function showCardBacks() {
   var card = new Card(0,0);
