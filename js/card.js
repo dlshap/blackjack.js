@@ -26,8 +26,16 @@ function Card(num, suit) {
   this.getValue = function() {
     return this.value;
   }
+  this.rank = function() {
+    //facecards = 10
+    if (this.value[0] < 10)
+      return this.value[0];
+    else {
+      return 10;
+    }
+  }
   this.equals = function (card) {
-    return (this.value === card.getValue());
+    return (this.rank() === card.rank());
   }
   // Constructor
   this.value = [num, suit];

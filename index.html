@@ -22,18 +22,32 @@
     <h2 id="msg1"><br></h3>
     <h3 id="msg2"><br></h4>
   </div>
-  <div class="row cards">
-    <div class="dealer-cards">
-      <label><h3>Dealer</h3><label>
-      <img id="dealerCard" class="box card-box" src="#" alt="Dealer's Up Card">
-    </div>
-    <div class="player-cards">
-      <label><h3>Player</h3><label>
-      <img id="playerCard1" class="box card-box" src="#" alt="Player Card 1">
-      <img id="playerCard2" class="box card-box" src="#" alt="Player Card 2">
-      <br>
-    </div>
+  <div>
+  <table class = "card-table">
+    <tr>
+      <td>
+        <label><h3>Dealer</h3><label>
+      </td>
+      <td>
+        <label><h3>Player</h3><label>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img id="dealerCard" class="box card-box" src="#" alt="Dealer's Up Card">
+      </td>
+      <td>
+      <!-- <div class="player-cards"> -->
+      <!-- <label><h3>Player</h3><label> -->
+        <img id="playerCard1" class="box card-box" src="#" alt="Player Card 1">
+        <img id="playerCard2" class="box card-box" src="#" alt="Player Card 2">
+      </td>
+    </tr>
+    </table>
+      <!-- </div> -->
+    <!-- </div> -->
   </div>
+</table>
   <div class="buttons">
     <button class="btn btn-primary btn-deal" onclick="deal()" accesskey="a">De<u>a</u>l</button>
     <div class="choice-buttons">

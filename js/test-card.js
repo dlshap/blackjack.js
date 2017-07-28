@@ -1,7 +1,7 @@
 var testCard = {
   test1: function() {
-    var card1 = new Card(0,2);
-    var card2 = new Card(0,3);
-    assert (card1 === card2);
+    var card1 = new Card(11,4);
+    var card2 = new Card(11,3);
+    tableUI.showMsg (2, "true:"+card1.equals(card2));
   }
 };
