@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
   addClickListeners();
 });
 
-
 function addClickListeners () {
   document.getElementById("drill-pairs").addEventListener("click",
     function() {optionChanged("drill-pairs"); });

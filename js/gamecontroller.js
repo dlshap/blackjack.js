@@ -3,15 +3,15 @@ var gameController = {
     dealer.deal();
   },
   hit: function() {
-    strategy.hit();
+    quiz.hit();
   },
   stand: function() {
-    strategy.stand();
+    quiz.stand();
   },
   double: function() {
-    strategy.double();
+    quiz.double();
   },
   split: function() {
-    strategy.split();
+    quiz.split();
   }
 };

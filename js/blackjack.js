@@ -1,8 +1,6 @@
 "use strict";
 
-var shoe;
-// var strategy;
-// var gameController = new GameController();
+var shoe;  //figure out how to make this local sometime
 
 function showCardBacks() {
   //do this first so no delay on screen
@@ -17,8 +15,6 @@ function initTable() {
   showCardBacks();
   setInitialDrillTypes();
   prepareShoe();
-  // loadGameController();
-  // loadStrategy();
 }
 
 function setInitialDrillTypes() {
@@ -30,11 +26,3 @@ function prepareShoe() {
   shoe = new Shoe(config.noOfDecks);
   shoe.shuffle();
 }
-
-// function loadGameController() {
-//   gameController = new GameController();
-// }
-
-// function loadStrategy() {
-//   strategy = new Strategy();
-// }

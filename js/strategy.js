@@ -1,17 +1,16 @@
-var strategy = {
-  hit: function() {
-    tableUI.showMsg(1, "Hit Me!");
-  },
-  stand: function() {
-    tableUI.showMsg(1, "Stick");
-    tableUI.showMsg(2, "You better bust!");
-  },
-  double: function() {
-    tableUI.showMsg(1, "Double Down!");
-    tableUI.showMsg(2, "It's pay day!");
-  },
-  split: function() {
-    tableUI.showMsg(1, "Split 'Em");
-    tableUI.showMsg(2, "I can't look");
-  }
-};
+function strategy() {
+  var pairStrategy = [
+    {Deal: ["2","3","4","5","6","7","8","9","10","Ace"],
+      Ace: ["P","P","P","P","P","P","P","P","P", "P"],
+       10: ["S","S","S","S","S","S","S","S","S", "S"],
+        9: ["P","P","P","P","P","S","P","P","S", "S"],
+        8: ["P","P","P","P","P","P","P","P","P", "P"],
+        7: ["P","P","P","P","P","P","H","H","H", "H"],
+        6: ["H","P","P","P","P","H","H","H","H", "H"],
+        5: ["D","D","D","D","D","D","D","D","H", "H"],
+        4: ["H","H","H","H","H","H","H","H","H", "H"],
+        3: ["H","H","P","P","P","P","H","H","H", "H"],
+        2: ["H","H","P","P","P","P","H","H","H", "H"]
+    }
+  ]
+}
