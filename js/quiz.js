@@ -5,7 +5,7 @@ var quiz = {
   },
   stand: function() {
     tableUI.showMsg(1, "Stick");
-    tableUI.showMsg(2, "You better bust!");
+    testCard.test2();
   },
   double: function() {
     tableUI.showMsg(1, "Double Down!");

@@ -12,6 +12,11 @@ function TableUI() {
   }
 
   this.setDrillType = function (whichType, value) {
-    document.getElementById(whichType).checked = value;
+    var optionMap = {
+      pairs: "drill-pairs",
+      hard: "drill-hard",
+      soft:"drill-soft"
+    };
+    document.getElementById(optionMap[whichType]).checked = value;
   }
 }

@@ -1,4 +1,4 @@
-function hand() {
+function Hand() {
   var cards = [];
   this.addCard = function (card) {
     cards.push(card);
@@ -7,8 +7,8 @@ function hand() {
     cards.pop(card);
   }
   this.isHoldingCard = function (card) {
-    for (c in cards) {
-      if (c.equals(card)) return true;
+    for (var i = 0; i < cards.length; i++) {
+      if (cards[i].equals(card)) return true;
     }
     return false;
   }

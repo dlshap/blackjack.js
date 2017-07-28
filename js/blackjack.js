@@ -18,11 +18,15 @@ function initTable() {
 }
 
 function setInitialDrillTypes() {
-  // tableUI.setDrillType("drill-pairs", true);
-  // config.drillTypes.addDrillType("pairs");
+  tableUI.setDrillType("pairs", true);
+  config.drillTypes.addDrillType("pairs");
+  tableUI.setDrillType("hard", true);
+  config.drillTypes.addDrillType("hard");
+  tableUI.setDrillType("soft", true);
+  config.drillTypes.addDrillType("soft");
 }
 
 function prepareShoe() {
-  shoe = new Shoe(config.noOfDecks);
+  shoe = new Shoe(config.numOfDecks);
   shoe.shuffle();
 }

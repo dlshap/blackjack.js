@@ -20,6 +20,7 @@ function optionChanged (optionId) {
   };
   var optionClicked = document.getElementById(optionId).checked;
   config.drillTypes.change(optionMap[optionId], optionClicked);
+  dealer.changeDrill();
 }
 
 function deal() {

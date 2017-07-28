@@ -4,11 +4,10 @@ var dealer = {
     this.dealPlayerHand();
   },
   dealDealerCard: function() {
-    // Deal the dealer a card
     this.dealACard("dealerCard");
   },
   dealPlayerHand: function() {
-    if (config.drillTypes.length() === 1)
+    if (config.drillTypes.length() === 1 || config.drillTypes.length() === 2)
       this.dealCheat();
     else
       this.dealNormal();
@@ -19,16 +18,23 @@ var dealer = {
     return card;
   },
   cheatACard: function(num) {
-      var suit = Math.floor(Math.random() * 4)+1;
+      var suit = Math.floor(Math.random() * 4) +1;
       var cheatCard = new Card(num, suit);
       return cheatCard;
   },
   dealCheat: function() {
-    if (config.drillTypes.findDrillType("pairs") !== -1)
-      this.dealPair();
-    else if (config.drillTypes.findDrillType("soft") !== -1)
-      this.dealSoft();
-    else dealNormal();
+    var drillTypeIndex = Math.floor(Math.random() * config.drillTypes.length() + 1);
+    var drillType = config.drillTypes.getDrillType(drillTypeIndex);
+    switch (drillType) {
+      case "pairs":
+        this.dealPair();
+        break;
+      case "soft":
+        this.dealSoft();
+        break;
+      default:
+        this.dealHard();
+    }
   },
   dealNormal: function() {
     this.dealACard("playerCard1");
@@ -37,12 +43,33 @@ var dealer = {
   dealPair: function() {
     var card = this.dealACard("playerCard1");
     card.display("playerCard1");
+    // deal 2nd card same as first
     card = this.cheatACard(card.getValue()[0]);
     card.display("playerCard2");
   },
   dealSoft: function() {
-    var card = this.cheatACard(1);
+    // deal an ace
+    var card;
+    card = this.cheatACard(1);
     card.display("playerCard1");
-    this.dealACard("playerCard2");
+    // no ace
+    var num = Math.floor(Math.random() * 12) +2;
+    card = this.cheatACard(num);
+    card.display("playerCard2");
+  },
+  dealHard: function() {
+      //no Aces (1)
+      var firstNum, secondNum;
+      firstNum = secondNum = Math.floor(Math.random() * 12) +2;
+      this.cheatACard(firstNum).display("playerCard1");
+      // no repeats (pairs)
+      while (firstNum === secondNum) {
+        secondNum = Math.floor(Math.random() * 12) +2;
+      }
+      this.cheatACard(secondNum).display("playerCard2");
+  },
+  changeDrill: function() {
+    shoe.loadShoe();
+    shoe.shuffle();
   }
 };
