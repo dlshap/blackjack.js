@@ -18,8 +18,8 @@ function initTable() {
 }
 
 function setInitialDrillTypes() {
-  tableUI.setDrillType("drill-pairs", true);
-  config.drillTypes.addDrillType("pairs");
+  // tableUI.setDrillType("drill-pairs", true);
+  // config.drillTypes.addDrillType("pairs");
 }
 
 function prepareShoe() {
