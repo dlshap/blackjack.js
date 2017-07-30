@@ -4,8 +4,8 @@ var config = {
   cardBackPath: "card-backs/b1fv_big.png",
   cardFaceDir: "SVG-cards-1.3/",
   cardFaceExt: ".svg",
-  numOfDecks: 1,
-  numOfShuffles: 6,
+  numOfDecks: 2,
+  numOfShuffles: 8,
   drillTypes: new DrillTypes([])   //initially pairs only
 };
 

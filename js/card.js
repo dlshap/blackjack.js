@@ -1,8 +1,9 @@
 // Card Object (class)
 function Card(num, suit) {
+  var filename;
+  var numbers =       ["Ace","2","3","4","5","6","7","8","9","10","Jack","Queen","King"];
+  var suits = ["Spades","Hearts","Diamonds","Clubs"];
   this.setFileName = function(value) {
-    var numbers = ["Ace","2","3","4","5","6","7","8","9","10","Jack","Queen","King"];
-    var suits = ["Spades","Hearts","Diamonds","Clubs"];
     this.fileName = config.cardPath;
     if (num === 0 && suit === 0)
         this.fileName += config.cardBackPath;

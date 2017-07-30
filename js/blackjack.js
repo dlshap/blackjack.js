@@ -15,6 +15,7 @@ function initTable() {
   showCardBacks();
   setInitialDrillTypes();
   prepareShoe();
+  preLoadCardImages();
 }
 
 function setInitialDrillTypes() {
@@ -29,4 +30,15 @@ function setInitialDrillTypes() {
 function prepareShoe() {
   shoe = new Shoe(config.numOfDecks);
   shoe.shuffle();
+}
+
+function preLoadCardImages() {
+  var i, j, card;
+  var image = new Image();
+  for (i = 1; i <= 13; i++) {
+    for (j = 1; j <= 4; j++) {
+      card = new Card(i, j);
+      image.src = card.getFileName();
+    }
+  }
 }
