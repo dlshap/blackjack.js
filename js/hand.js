@@ -12,4 +12,18 @@ function Hand() {
     }
     return false;
   }
+  // this.isPair() {
+    // if ((cards.length === 2) && (cards[0].faceMatch(cards[1])) {
+    //
+    // }
+  // }
+  this.isHard = function() {
+
+  }
+  this.isSoft = function() {
+
+  }
+  this.getStrategy = function() {
+
+  }
 };

@@ -1,11 +1,11 @@
 var quiz = {
   hit: function() {
     tableUI.showMsg(1, "Hit Me!");
-    testCard.test1();
+    tableUI.showMsg(2, "testing...");
+    testCard.runTests();
   },
   stand: function() {
     tableUI.showMsg(1, "Stick");
-    testCard.test2();
   },
   double: function() {
     tableUI.showMsg(1, "Double Down!");
