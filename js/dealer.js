@@ -68,8 +68,8 @@ var dealer = {
       }
       this.cheatACard(secondNum).display("playerCard2");
   },
-  changeDrill: function() {
-    config.drillTypes.change(optionMap[optionId], optionClicked);
+  changeDrill: function(drillType, newValue) {
+    config.drillTypes.change(drillType, newValue);
     shoe.loadShoe();
     shoe.shuffle();
   }

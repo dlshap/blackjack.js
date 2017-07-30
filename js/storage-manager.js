@@ -5,6 +5,9 @@ var storageMgr = {
   },
   retrieveObj: function (name) {
     var strObj = localStorage[name];
-    return JSON.parse(strObj);
+    if (strObj === undefined)
+      return null;
+    else
+      return JSON.parse(strObj);
   }
 }

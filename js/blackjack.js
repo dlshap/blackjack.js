@@ -19,18 +19,12 @@ function initTable() {
 }
 
 function setInitialDrillTypes() {
-  // tableUI.setDrillType("pairs", true);
-  // config.drillTypes.addDrillType("pairs");
-  // tableUI.setDrillType("hard", true);
-  // config.drillTypes.addDrillType("hard");
-  // tableUI.setDrillType("soft", true);
-  // config.drillTypes.addDrillType("soft");
-  tableUI.setDrillType("pairs", true);
-  config.drillTypes.addDrillType("pairs");
-  tableUI.setDrillType("hard", true);
-  config.drillTypes.addDrillType("hard");
-  tableUI.setDrillType("soft", true);
-  config.drillTypes.addDrillType("soft");
+  if (config.drillTypes.findDrillType("pairs") !== -1)
+    tableUI.setDrillType("pairs", true);
+  if (config.drillTypes.findDrillType("hard") !== -1)
+    tableUI.setDrillType("hard", true);
+  if (config.drillTypes.findDrillType("soft") !== -1)
+    tableUI.setDrillType("soft", true);
 }
 
 function prepareShoe() {
