@@ -19,8 +19,7 @@ function optionChanged (optionId) {
     "drill-soft": "soft"
   };
   var optionClicked = document.getElementById(optionId).checked;
-  config.drillTypes.change(optionMap[optionId], optionClicked);
-  dealer.changeDrill();
+  dealer.changeDrill(optionMap[optionId], optionClicked);
 }
 
 function deal() {

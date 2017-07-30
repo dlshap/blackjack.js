@@ -69,6 +69,7 @@ var dealer = {
       this.cheatACard(secondNum).display("playerCard2");
   },
   changeDrill: function() {
+    config.drillTypes.change(optionMap[optionId], optionClicked);
     shoe.loadShoe();
     shoe.shuffle();
   }
