@@ -1,6 +1,14 @@
 "use strict";
 
 var shoe;  //figure out how to make this local sometime
+var player = new Player();  //one player only for now
+
+function initTable() {
+  showCardBacks();
+  setInitialDrillTypes();
+  prepareShoe();
+  preLoadCardImages();
+}
 
 function showCardBacks() {
   //do this first so no delay on screen
@@ -9,13 +17,6 @@ function showCardBacks() {
   for (var i = 1; i <= 2; i++) {
     card.display("playerCard" + i);
   }
-}
-
-function initTable() {
-  showCardBacks();
-  setInitialDrillTypes();
-  prepareShoe();
-  preLoadCardImages();
 }
 
 function setInitialDrillTypes() {

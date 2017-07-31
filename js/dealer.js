@@ -1,72 +1,38 @@
 var dealer = {
+  dealerHand: new Hand(),
   deal: function() {
-    this.dealDealerCard();
-    this.dealPlayerHand();
+    this.clearHands(player);
+    this.dealDealerHand();
+    this.dealPlayerHand(player);
   },
-  dealDealerCard: function() {
-    this.dealACard("dealerCard");
+  clearHands: function(player) {
+    this.dealerHand.clearHand();
+    player.clearHands();
   },
-  dealPlayerHand: function() {
-    if (config.drillTypes.length() === 1 || config.drillTypes.length() === 2)
-      this.dealCheat();
-    else
-      this.dealNormal();
+  dealDealerHand: function() {
+    // for now, dealer only gets one card
+    var card = this.dealFromShoe("dealerCard")
+    this.dealerHand.addCard(card);
   },
-  dealACard: function(toWhere) {
+  dealPlayerHand: function(player) {
+    if (config.drillTypes.length() !== 1 && config.drillTypes.length() !== 2) {
+      player.addHand(this.dealNormal(new Hand()));
+    }
+    else {
+      player.addHand(cheatDealer.dealCheat(new Hand()));
+    }
+  },
+  dealFromShoe: function(toWhere) {
     var card = shoe.getCard();
     card.display(toWhere);
     return card;
   },
-  cheatACard: function(num) {
-      var suit = Math.floor(Math.random() * 4) +1;
-      var cheatCard = new Card(num, suit);
-      return cheatCard;
-  },
-  dealCheat: function() {
-    var drillTypeIndex = Math.floor(Math.random() * config.drillTypes.length() + 1);
-    var drillType = config.drillTypes.getDrillType(drillTypeIndex);
-    switch (drillType) {
-      case "pairs":
-        this.dealPair();
-        break;
-      case "soft":
-        this.dealSoft();
-        break;
-      default:
-        this.dealHard();
-    }
-  },
-  dealNormal: function() {
-    this.dealACard("playerCard1");
-    this.dealACard("playerCard2");
-  },
-  dealPair: function() {
-    var card = this.dealACard("playerCard1");
-    card.display("playerCard1");
-    // deal 2nd card same as first
-    card = this.cheatACard(card.getValue()[0]);
-    card.display("playerCard2");
-  },
-  dealSoft: function() {
-    // deal an ace
-    var card;
-    card = this.cheatACard(1);
-    card.display("playerCard1");
-    // no ace
-    var num = Math.floor(Math.random() * 12) +2;
-    card = this.cheatACard(num);
-    card.display("playerCard2");
-  },
-  dealHard: function() {
-      //no Aces (1)
-      var firstNum, secondNum;
-      firstNum = secondNum = Math.floor(Math.random() * 12) +2;
-      this.cheatACard(firstNum).display("playerCard1");
-      // no repeats (pairs)
-      while (firstNum === secondNum) {
-        secondNum = Math.floor(Math.random() * 12) +2;
-      }
-      this.cheatACard(secondNum).display("playerCard2");
+  dealNormal: function(hand) {
+    var card = this.dealFromShoe("playerCard1");
+    hand.addCard(card);
+    card = this.dealFromShoe("playerCard2");
+    hand.addCard(card);
+    return hand;
   },
   changeDrill: function(drillType, newValue) {
     config.drillTypes.change(drillType, newValue);

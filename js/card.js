@@ -39,9 +39,9 @@ function Card(num, suit) {
     // All facecards are equal
     return (this.rank() === card.rank());
   }
-  this.match = function(card) {
+  this.exactlyMatches = function(card) {
     // Match on card num (10 !== 11 !== 12...)
-    return (this.value[0] == card.value[0]);
+    return (this.value[0] === card.value[0]);
   }
   // Constructor
   this.value = [num, suit];
