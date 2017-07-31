@@ -1,6 +1,6 @@
 var cheatDealer = {
   dealCheat: function(hand) {
-    this.cheatHand.clearHand();
+    hand.clearHand();
     var drillTypeIndex = Math.floor(Math.random() * config.drillTypes.length() + 1);
     var drillType = config.drillTypes.getDrillType(drillTypeIndex);
     switch (drillType) {
