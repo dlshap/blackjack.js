@@ -1,6 +1,6 @@
 var gameController = {
   deal: function() {
-    dealer.deal();
+    dealer.deal(player);  //need to get the right player from somewhere
   },
   hit: function() {
     quiz.hit();

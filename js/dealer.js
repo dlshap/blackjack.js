@@ -1,9 +1,13 @@
 var dealer = {
   dealerHand: new Hand(),
-  deal: function() {
+  playerHand: new Hand(),
+  deal: function(player) {
     this.clearHands(player);
     this.dealDealerHand();
     this.dealPlayerHand(player);
+  },
+  getHand: function () {
+    return this.dealerHand;
   },
   clearHands: function(player) {
     this.dealerHand.clearHand();
@@ -16,10 +20,10 @@ var dealer = {
   },
   dealPlayerHand: function(player) {
     if (config.drillTypes.length() !== 1 && config.drillTypes.length() !== 2) {
-      player.addHand(this.dealNormal(new Hand()));
+      player.addHand(this.dealNormal(this.playerHand));
     }
     else {
-      player.addHand(cheatDealer.dealCheat(new Hand()));
+      player.addHand(cheatDealer.dealCheat(this.playerHand));
     }
   },
   dealFromShoe: function(toWhere) {

@@ -1,7 +1,8 @@
 // Card Object (class)
 function Card(num, suit) {
+  var value = [];
   var filename;
-  var numbers =       ["Ace","2","3","4","5","6","7","8","9","10","Jack","Queen","King"];
+  var numbers = ["Ace","2","3","4","5","6","7","8","9","10","Jack","Queen","King"];
   var suits = ["Spades","Hearts","Diamonds","Clubs"];
   this.setFileName = function(value) {
     this.fileName = config.cardPath;
@@ -15,6 +16,9 @@ function Card(num, suit) {
         config.cardFaceExt;
     }
   }
+  this.getRankName = function() {
+    return numbers[this.rank()-1];
+  }
   this.display = function(where) {
       tableUI.showCard(where, this.getFileName());
   }
@@ -22,15 +26,15 @@ function Card(num, suit) {
     return this.fileName;
   }
   this.setValue = function(num,suit) {
-    this.value = [num, suit];
+    value = [num, suit];
   }
   this.getValue = function() {
-    return this.value;
+    return value;
   }
   this.rank = function() {
     //facecards = 10
-    if (this.value[0] < 10)
-      return this.value[0];
+    if (value[0] < 10)
+      return value[0];
     else {
       return 10;
     }
@@ -40,10 +44,13 @@ function Card(num, suit) {
     return (this.rank() === card.rank());
   }
   this.exactlyMatches = function(card) {
-    // Match on card num (10 !== 11 !== 12...)
-    return (this.value[0] === card.value[0]);
+    // Match on card rank (10 !== 11 !== 12...)
+    return (value[0] === card.getValue()[0]);
+  }
+  this.getCardName = function() {
+    return numbers[value[0] - 1] + " of " + suits[value[1] - 1];
   }
   // Constructor
-  this.value = [num, suit];
-  this.setFileName(this.value);
+  value = [num, suit];
+  this.setFileName(value);
 };

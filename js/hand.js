@@ -18,6 +18,9 @@ function Hand() {
   this.clearHand = function () {
     cards = [];
   }
+  this.numOfCards = function() {
+    return cards.length;
+  }
   this.isPair = function () {
     return ((cards.length === 2) && ((cards[0]).exactlyMatches(cards[1])));
   }

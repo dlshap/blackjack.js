@@ -29,11 +29,23 @@ var testCard = {
     hand.addCard(new Card(11,1));
     this.assertTrue(!hand.isPair());
   },
-  // test4: function() {
-  //   console.log(dealer.dealerHand.getCard(0));
-  //   console.log(player.getHand(0).getCard(0),
-  //       player.getHand(0).getCard(1));
-  // },
+  test4: function() {
+    var card = new Card(1,3);
+    var num = card.getRankName();
+    this.assertTrue(num === "Ace");
+    var card = new Card(13,2);
+    var num = card.getRankName();
+    this.assertTrue(num === "10");
+  },
+  test5: function() {
+    // run against a pair
+    var dealerCard = dealer.getHand().getCard(0);
+    console.log(dealerCard.getCardName());
+    var playerHand = player.getHand(0);
+    console.log(playerHand.numOfCards);
+    // console.log(playerCard.getCardName());
+    // console.log(strategy.pairStrategy.getPairStrategy(dealerCard, playerCard));
+  },
 
   runTests: function() {
     console.log("testing...");
