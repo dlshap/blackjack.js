@@ -44,10 +44,8 @@ function DrillTypes(initDrillTypes) {
   this.change = function(option, value) {
     if (value) {
       this.addDrillType(option);
-      // tableUI.showMsg(2, "adding " + option)
     } else {
       this.removeDrillType(option);
-      // tableUI.showMsg(2, "removing " + option);
     }
     this.saveMe();
   }
