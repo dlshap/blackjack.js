@@ -21,6 +21,25 @@ function Hand() {
   this.numOfCards = function() {
     return cards.length;
   }
+  this.handTotal = function() {
+    // total face value (10,J,Q,K = 10, Ace=1)
+    var i, total = 0;
+    for (i = 0; i < cards.length; i++) {
+      total += cards[i].getRank();
+    }
+    return total;
+  }
+  this.handHighTotal = function() {
+    // same as handTotal but Ace = 11
+    var i, total = 0;
+    for (i = 0; i < cards.length; i++) {
+      total += cards[i].getHighRank();
+    }
+    if (total === 22)
+      return 12;
+    else
+      return total;
+  }
   this.isPair = function () {
     return ((cards.length === 2) && ((cards[0]).exactlyMatches(cards[1])));
   }

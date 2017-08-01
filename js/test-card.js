@@ -51,7 +51,32 @@ var testCard = {
     this.assertTrue(!hand.isPair());
     this.assertTrue(!hand.isSoft());
     this.assertTrue(hand.isHard());
-
+  },
+  test6: function() {
+    // run against a pair
+    var hand = new Hand();
+    hand.addCard(new Card(1,2));
+    hand.addCard(new Card(1,4));
+    this.assertTrue(hand.handTotal() === 2);
+    this.assertTrue(hand.handHighTotal() === 12);
+    hand.clearHand();
+    hand.addCard(new Card(4,2));
+    hand.addCard(new Card(1,4));
+    this.assertTrue(hand.handTotal() === 5);
+    this.assertTrue(hand.handHighTotal() === 15);
+    hand.clearHand();
+    hand.addCard(new Card(4,2));
+    hand.addCard(new Card(13,4));
+    this.assertTrue(hand.handTotal() === 14);
+    this.assertTrue(hand.handHighTotal() === 14);
+  },
+  test7: function() {
+    var ph = new Hand(), dh = new Hand();
+    dh.addCard(new Card(1,2));
+    ph.addCard(new Card(4,4));
+    ph.addCard(new Card(13,4));
+    strategy.pickBestMove(dh, ph);
+    this.assertTrue(strategy.isBestMove("H"));
   },
 
   runTests: function() {
