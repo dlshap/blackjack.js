@@ -4,6 +4,7 @@ function Card(num, suit) {
   var filename;
   var numbers = ["Ace","2","3","4","5","6","7","8","9","10","Jack","Queen","King"];
   var suits = ["Spades","Hearts","Diamonds","Clubs"];
+
   this.setFileName = function(value) {
     this.fileName = config.cardPath;
     if (num === 0 && suit === 0)
@@ -59,6 +60,8 @@ function Card(num, suit) {
   this.getCardName = function() {
     return numbers[value[0] - 1] + " of " + suits[value[1] - 1];
   }
+
+  /* ---------------------------------------------------------------- */
   // Constructor
   if (num > 13 || suit > 4) {
     value = [0, 0];

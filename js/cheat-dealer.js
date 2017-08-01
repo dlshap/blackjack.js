@@ -33,7 +33,7 @@ var cheatDealer = {
     card = this.makeSpecificCard(1);
     hand.addCard(card);
     // no ace
-    var num = Math.floor(Math.random() * 12) +2;
+    var num = Math.floor(Math.random() * 8) +2;
     card = this.makeSpecificCard(num);
     hand.addCard(card);
     return hand;
