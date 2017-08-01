@@ -1,15 +1,26 @@
 var quiz = {
   hit: function() {
-    tableUI.showMsg(1, "Hit Me!");
-    testCard.runTests();
+    if (strategy.isBestMove("H"))
+      tableUI.showMsg(1, "Hit: Good choice!");
+    else
+      tableUI.showMsg(1, "Hit: Try again!");
   },
   stand: function() {
-    tableUI.showMsg(1, "No M&aacute;s!");
+    if (strategy.isBestMove("S"))
+      tableUI.showMsg(1, "Stand: Good choice!");
+    else
+      tableUI.showMsg(1, "Stand: Try again!");
   },
   double: function() {
-    tableUI.showMsg(1, "Double Down!");
+    if (strategy.isBestMove("D"))
+      tableUI.showMsg(1, "Double: Good choice!");
+    else
+      tableUI.showMsg(1, "Double: Try again!");
   },
   split: function() {
-    tableUI.showMsg(1, "Split 'Em!");
+    if (strategy.isBestMove("P"))
+      tableUI.showMsg(1, "Split: Good choice!");
+    else
+      tableUI.showMsg(1, "Split: Try again!");
   }
 };

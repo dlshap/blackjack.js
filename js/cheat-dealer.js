@@ -1,5 +1,5 @@
 var cheatDealer = {
-  dealCheat: function(hand) {
+  dealCheatHand: function(hand) {
     hand.clearHand();
     var drillTypeIndex = Math.floor(Math.random() * config.drillTypes.length() + 1);
     var drillType = config.drillTypes.getDrillType(drillTypeIndex);
@@ -27,6 +27,7 @@ var cheatDealer = {
     card = this.makeSpecificCard(card.getValue()[0]);
     card.display("playerCard2");
     hand.addCard(card);
+    return hand;
   },
   dealSoft: function(hand) {
     // deal an ace
@@ -39,18 +40,22 @@ var cheatDealer = {
     card = this.makeSpecificCard(num);
     card.display("playerCard2");
     hand.addCard(card);
+    return hand;
   },
   dealHard: function(hand) {
       //no Aces (1)
       var card, firstNum, secondNum;
       firstNum = secondNum = Math.floor(Math.random() * 12) +2;
-      card = this.makeSpecificCard(firstNum).display("playerCard1");
+      card = this.makeSpecificCard(firstNum);
+      card.display("playerCard1");
       hand.addCard(card);
       // no repeats (pairs)
       while (firstNum === secondNum) {
         secondNum = Math.floor(Math.random() * 12) +2;
       }
-      card = this.makeSpecificCard(secondNum).display("playerCard2");
+      card = this.makeSpecificCard(secondNum);
+      card.display("playerCard2");
       hand.addCard(card);
+      return hand;
   }
 }

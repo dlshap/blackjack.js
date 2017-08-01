@@ -1,12 +1,22 @@
 function Player() {
   var hands = [];
+  var playerName = "";
+  this.handCount = function () {
+    return this.hands.length;
+  }
   this.addHand = function (hand) {
-    hands.push(hand);
+    this.hands.push(hand);
   }
   this.getHand = function (whichHand) {
-    return hands[whichHand];
+    return this.hands[whichHand];
   }
   this.clearHands = function () {
-    hands = [];
+    this.hands = [];
+  }
+  this.setName = function (name) {
+    this.playerName = name;
+  }
+  this.getName = function () {
+    return this.playerName;
   }
 }

@@ -1,4 +1,8 @@
 var strategy = {
+  bestMove: "",
+  isBestMove: function (choice) {
+    return (choice === this.bestMove);
+  },
   pairStrategy: {
     strategyTable: {
     Ace: {2:"P", 3:"P", 4:"P", 5:"P", 6:"P", 7:"P", 8:"P", 9:"P", 10:"P", Ace:"P"},
@@ -14,9 +18,10 @@ var strategy = {
         },
       getPairStrategy: function(dealerCard, playerCard) {
         var dealerCardRank = dealerCard.getRankName();
-        var againstDealerCard = this.strategyTable[dealerCardRank];
         var playerCardRank = playerCard.getRankName();
-        return againstDealerCard[playerCardRank];
+        var againstDealerCard = this.strategyTable[playerCardRank];
+        var bestMove = againstDealerCard[dealerCardRank];
+        return bestMove;
       }
     },
   hardStrategy: {
@@ -24,5 +29,12 @@ var strategy = {
   },
   softStrategy: {
 
+  },
+  pickBestMove: function (dealerHand, playerHand) {
+    var dealerCard = dealerHand.getCard(0);
+    if (playerHand.isPair()) {
+      var playerCard = playerHand.getCard(0);
+      this.bestMove = this.pairStrategy.getPairStrategy(dealerCard, playerCard);
+    }
   }
 };

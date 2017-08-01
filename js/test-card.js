@@ -39,12 +39,7 @@ var testCard = {
   },
   test5: function() {
     // run against a pair
-    var dealerCard = dealer.getHand().getCard(0);
-    console.log(dealerCard.getCardName());
-    var playerHand = player.getHand(0);
-    console.log(playerHand.numOfCards);
-    // console.log(playerCard.getCardName());
-    // console.log(strategy.pairStrategy.getPairStrategy(dealerCard, playerCard));
+    console.log(player.getHand(0).getCard(0).getCardName());
   },
 
   runTests: function() {

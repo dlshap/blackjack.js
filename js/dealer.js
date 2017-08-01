@@ -20,10 +20,12 @@ var dealer = {
   },
   dealPlayerHand: function(player) {
     if (config.drillTypes.length() !== 1 && config.drillTypes.length() !== 2) {
-      player.addHand(this.dealNormal(this.playerHand));
+      this.playerHand = this.dealNormal(this.playerHand);
+      player.addHand(this.playerHand);
     }
     else {
-      player.addHand(cheatDealer.dealCheat(this.playerHand));
+      this.playerHand = cheatDealer.dealCheatHand(this.playerHand);
+      player.addHand(this.playerHand);
     }
   },
   dealFromShoe: function(toWhere) {
