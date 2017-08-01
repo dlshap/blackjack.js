@@ -72,6 +72,16 @@ input[type='checkbox'] {
   border-radius: 25px;
 }
 
+.btn-split {
+  background-color: #ff4dff;
+  color: White;
+}
+
+.btn-split:hover {
+  background-color: #cc00cc;
+  color: White;
+}
+
 .btn-choice {
   padding: 35px 30px 35px 30px;
   margin: 30px 15px 30px 15px;
