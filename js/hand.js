@@ -24,13 +24,14 @@ function Hand() {
   this.isPair = function () {
     return ((cards.length === 2) && ((cards[0]).exactlyMatches(cards[1])));
   }
-  this.isHard = function () {
-
-  }
   this.isSoft = function () {
-
+    return ((cards.length === 2) &&
+      (cards[0].getRank() === 1 || cards[1].getRank() === 1));
   }
-  this.getStrategy = function () {
-
+  this.isHard = function () {
+    return (!(this.isPair() || this.isSoft()));
+  }
+  this.getStrategy = function (dealerCard) {
+  //someday
   }
 };

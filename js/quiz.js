@@ -1,5 +1,6 @@
 var quiz = {
   hit: function() {
+    testCard.runTests();
     if (strategy.isBestMove("H"))
       tableUI.showMsg(1, "Hit: Good choice!");
     else

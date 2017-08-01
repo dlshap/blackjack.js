@@ -39,7 +39,19 @@ var testCard = {
   },
   test5: function() {
     // run against a pair
-    console.log(player.getHand(0).getCard(0).getCardName());
+    var hand = new Hand();
+    hand.addCard(new Card(1,2));
+    hand.addCard(new Card(1,4));
+    this.assertTrue(hand.isPair());
+    this.assertTrue(hand.isSoft());
+    this.assertTrue(!hand.isHard());
+    hand.clearHand();
+    hand.addCard(new Card(13,2));
+    hand.addCard(new Card(4,4));
+    this.assertTrue(!hand.isPair());
+    this.assertTrue(!hand.isSoft());
+    this.assertTrue(hand.isHard());
+
   },
 
   runTests: function() {

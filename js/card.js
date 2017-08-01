@@ -17,7 +17,7 @@ function Card(num, suit) {
     }
   }
   this.getRankName = function() {
-    return numbers[this.rank()-1];
+    return numbers[this.getRank()-1];
   }
   this.display = function(where) {
       tableUI.showCard(where, this.getFileName());
@@ -31,7 +31,7 @@ function Card(num, suit) {
   this.getValue = function() {
     return value;
   }
-  this.rank = function() {
+  this.getRank = function() {
     //facecards = 10
     if (value[0] < 10)
       return value[0];
@@ -39,9 +39,18 @@ function Card(num, suit) {
       return 10;
     }
   }
+  this.getHighRank = function() {
+    // Ace is 11
+    if (value[0] === 1) {
+      return 11;
+    }
+    else {
+      return this.getRank();
+    }
+  }
   this.equals = function (card) {
     // All facecards are equal
-    return (this.rank() === card.rank());
+    return (this.getRank() === card.getRank());
   }
   this.exactlyMatches = function(card) {
     // Match on card rank (10 !== 11 !== 12...)
@@ -51,6 +60,11 @@ function Card(num, suit) {
     return numbers[value[0] - 1] + " of " + suits[value[1] - 1];
   }
   // Constructor
-  value = [num, suit];
+  if (num > 13 || suit > 4) {
+    value = [0, 0];
+  }
+  else {
+    value = [num, suit];
+  }
   this.setFileName(value);
 };
