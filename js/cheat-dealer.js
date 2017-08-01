@@ -21,11 +21,9 @@ var cheatDealer = {
   },
   dealPair: function(hand) {
     var card = shoe.getCard();
-    card.display("playerCard1");
     hand.addCard(card);
     // deal 2nd card same as first
     card = this.makeSpecificCard(card.getValue()[0]);
-    card.display("playerCard2");
     hand.addCard(card);
     return hand;
   },
@@ -33,12 +31,10 @@ var cheatDealer = {
     // deal an ace
     var card;
     card = this.makeSpecificCard(1);
-    card.display("playerCard1");
     hand.addCard(card);
     // no ace
     var num = Math.floor(Math.random() * 12) +2;
     card = this.makeSpecificCard(num);
-    card.display("playerCard2");
     hand.addCard(card);
     return hand;
   },
@@ -47,14 +43,12 @@ var cheatDealer = {
       var card, firstNum, secondNum;
       firstNum = secondNum = Math.floor(Math.random() * 12) +2;
       card = this.makeSpecificCard(firstNum);
-      card.display("playerCard1");
       hand.addCard(card);
       // no repeats (pairs)
       while (firstNum === secondNum) {
         secondNum = Math.floor(Math.random() * 12) +2;
       }
       card = this.makeSpecificCard(secondNum);
-      card.display("playerCard2");
       hand.addCard(card);
       return hand;
   }

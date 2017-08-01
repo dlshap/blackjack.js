@@ -75,8 +75,13 @@ var testCard = {
     dh.addCard(new Card(1,2));
     ph.addCard(new Card(4,4));
     ph.addCard(new Card(13,4));
-    strategy.pickBestMove(dh, ph);
-    this.assertTrue(strategy.isBestMove("H"));
+    // dealer.dealerHand = dh;
+    // dealer.playerHand = ph;
+    // dealer.displayHands(dh, ph);
+    // this.assertTrue(strategy.isBestMove("H"));
+  },
+  test8: function() {
+    // console.log(shoe.getCard().getCardName());
   },
 
   runTests: function() {
