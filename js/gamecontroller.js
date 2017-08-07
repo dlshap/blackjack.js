@@ -14,5 +14,8 @@ var gameController = {
   },
   split: function() {
     quiz.split();
+  },
+  hint: function() {
+    quiz.hint();
   }
 };

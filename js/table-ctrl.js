@@ -42,3 +42,7 @@ function double() {
 function split() {
   gameController.split();
 }
+
+function hint() {
+  gameController.hint();
+}
