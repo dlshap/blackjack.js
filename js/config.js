@@ -12,12 +12,13 @@ var config = {
 function DrillTypes(initDrillTypes) {
   var options = storageMgr.retrieveObj("drillTypes");
   var notNull = false;
+  if (options === null)
+    options = [];
   for (var i = 0; i < options.length; i++) {
     if (options[i] !== null)
       notNull = true;
   }
-  if (!notNull) options = null;
-  if (options === null)
+  if (!notNull)
     options = [];
   this.findDrillType = function(what) {
     for (var i = 0; i < options.length; i++) {
