@@ -3,6 +3,7 @@
 <body>
 <link href="vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="css/blackjack.css" rel="stylesheet">
+<link href="css/cheat-card.css" rel="stylesheet">
 <script src="js/storage-mgr.js"></script>
 <script src="js/config.js"></script>
 <script src="js/strategy.js"></script>
@@ -41,15 +42,11 @@
         <img id="dealerCard" class="box card-box" src="#" alt="Dealer's Up Card">
       </td>
       <td>
-      <!-- <div class="player-cards"> -->
-      <!-- <label><h3>Player</h3><label> -->
         <img id="playerCard1" class="box card-box" src="#" alt="Player Card 1">
         <img id="playerCard2" class="box card-box" src="#" alt="Player Card 2">
       </td>
     </tr>
     </table>
-      <!-- </div> -->
-    <!-- </div> -->
   </div>
 </table>
   <div class="buttons">
@@ -69,25 +66,33 @@
       <label>Drill on:</label>
       <div id="choices">
         <input type="checkbox" id="drill-pairs">
-        <label for="radio-pairs">Pairs</label></input>
+        <label for="drill-pairs">Pairs</label></input>
         <input type="checkbox" id="drill-hard">
-        <label for="radio-hard"> Hard Hands</label></input>
+        <label for="drill-hard"> Hard Hands</label></input>
         <input type="checkbox" id="drill-soft">
-        <label for="radio-soft"> Soft Hands</label></input>
+        <label for="drill-soft"> Soft Hands</label></input>
       </div>
     </div>
   </div>
 </div>
+
 <!-- The Modal -->
 <div id="myModal" class="modal">
-
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close">&times;</span>
-    <img id="soft-cheat" class="cheat" src="cheat-card/soft-cheat.png" alt="Cheat Card">
+    <div class = "soft-cheat">
+      <img id="softCheatCard" class="cheat" src="cheat-card/soft-cheat.png" alt="Cheat Card">
+    </div>
+      <div class="card-choices">
+        <input type="radio" name="cardType" id="radio-pairs">
+        <label for="radio-pairs">Pairs</label></input>
+        <input type="radio" name="cardType" id="radio-hard">
+        <label for="radio-hard"> Hard Hands</label></input>
+        <input type="radio" name="cardType" id="radio-soft">
+        <label for="radio-soft"> Soft Hands</label></input>
+      </div>
+    </div>
   </div>
-
-</div>
-
 <html>
 <body>
