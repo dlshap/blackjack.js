@@ -1,4 +1,4 @@
-var cheatDealer = {
+var drillDealer = {
   dealCheatHand: function(hand) {
     hand.clearHand();
     var drillTypeIndex = Math.floor(Math.random() * config.drillTypes.length() + 1);

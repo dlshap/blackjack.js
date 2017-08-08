@@ -31,7 +31,7 @@ var dealer = {
       player.addHand(this.playerHand);
     }
     else {
-      this.playerHand = cheatDealer.dealCheatHand(this.playerHand);
+      this.playerHand = drillDealer.dealCheatHand(this.playerHand);
       player.addHand(this.playerHand);
     }
   },

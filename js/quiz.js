@@ -23,8 +23,5 @@ var quiz = {
       tableUI.showMsg(1, "Split: Good choice!");
     else
       tableUI.showMsg(1, "Split: Try again!");
-  },
-  hint: function() {
-    tableUI.showMsg(1,"Hints are coming soon!");
   }
 };

@@ -16,6 +16,6 @@ var gameController = {
     quiz.split();
   },
   hint: function() {
-    quiz.hint();
+    cheatCard.showHint();
   }
 };
