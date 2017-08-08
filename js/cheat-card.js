@@ -1,8 +1,11 @@
 var cheatCard = {
-  showHint: function () {
+  showHint: function (handType) {
     // Get the modal
     var modal = document.getElementById('myModal');
+    var cheatCard = document.getElementById("cheatCard");
     modal.style.display = "block";
+    cheatCard.src = getCheatCardFileName(handType);
+    document.getElementById("radio-"+handType).checked = true;
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
     // When the user clicks anywhere outside of the modal, close it
@@ -24,6 +27,10 @@ var cheatCard = {
     document.getElementById("radio-soft").addEventListener("click",
       function() {radioChanged("radio-soft"); });
 
+    function getCheatCardFileName(type) {
+      return "images/cheatcards/" + type + "-cheat.png";
+    }
+
     function radioChanged(optionId) {
       var optionMap = {
         "radio-pairs": "pairs",
@@ -31,9 +38,9 @@ var cheatCard = {
         "radio-soft": "soft"
       };
       // var optionClicked = document.getElementById(optionId).checked;
-      var cheatCard = document.getElementById("softCheatCard");
-      var cheatCardFileName = "cheat-card/" + optionMap[optionId] + "-cheat.png";
+      var cheatCardFileName = getCheatCardFileName(optionMap[optionId]);
       cheatCard.src = cheatCardFileName;
     }
+
   }
 }

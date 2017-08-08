@@ -8,7 +8,10 @@ function Player() {
     this.hands.push(hand);
   }
   this.getHand = function (whichHand) {
-    return this.hands[whichHand];
+    if (this.hands.length === 0)
+      return null
+    else
+      return this.hands[whichHand];
   }
   this.clearHands = function () {
     this.hands = [];

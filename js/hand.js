@@ -50,6 +50,14 @@ function Hand() {
   this.isHard = function () {
     return (!(this.isPair() || this.isSoft()));
   }
+  this.getType = function () {
+    if (this.isPair())
+      return "pairs";
+    else if (this.isSoft())
+      return "soft";
+    else
+      return "hard";
+  }
   this.getStrategy = function (dealerCard) {
   //someday
   }

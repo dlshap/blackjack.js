@@ -16,6 +16,10 @@ var gameController = {
     quiz.split();
   },
   hint: function() {
-    cheatCard.showHint();
+    var playerHand = player.getHand(0);
+    if (playerHand === null)
+      cheatCard.showHint("hard");
+    else
+      cheatCard.showHint(playerHand.getType());
   }
 };
