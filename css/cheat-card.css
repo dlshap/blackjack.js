@@ -16,12 +16,13 @@
 .modal-content {
     background-color: #fefefe;
     z-index: 1;
-    margin: 130px 15px 4px 15px;
+    margin-top: 30%;
+    /*margin: 130px 15px 4px 15px;*/
     /*margin: auto;*/
     padding: 10px;
     border: 1px solid #888;
     width: 85%;
-    height: 700px;
+    height: 55%;
     top: 5%;
     left: 5%;
 }
@@ -41,12 +42,31 @@
     cursor: pointer;
 }
 
+.btn-cheat-close {
+  padding: 10px 60px 10px 60px;
+  margin:0 auto;
+  display: block;
+}
+
 .cheat {
   width: 80%;
   height: 80%;
 }
 
-.test-button {
-  float: right;
-  font-size: 32px;
+input[type='radio'] {
+  width:25px;
+  height:25px;
+  background:white;
+  border-radius:2px;
+  border:2px solid #555;
+}
+
+.btn-cheat-close {
+  font-size: 24px;
+}
+
+.cheat-choices label {
+  color: Blue;
+  font-size: 200%;
+  margin-right: 25px;
 }

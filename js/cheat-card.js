@@ -14,6 +14,9 @@ var cheatCard = {
             modal.style.display = "none";
         }
     }
+    // click Done button to close
+    document.getElementById("cheatClose").addEventListener("click",
+      function() {modal.style.display = "none"; });
     // When the user clicks on <span> (x), close the modal
     span.onclick = function() {
         modal.style.display = "none";
