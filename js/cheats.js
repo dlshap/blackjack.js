@@ -8,7 +8,6 @@ function colorTable() {
 
 for (var i = 0; i < tableRows.length; i++) {
   var pairCells = tableRows[i].cells;
-  var cell0 = pairCells[0];
   pairCells[0].style.backgroundColor = "Gray";
     for (var j = 1; j < pairCells.length; j++) {
       var c = pairCells[j];
