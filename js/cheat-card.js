@@ -2,9 +2,9 @@ var cheatCard = {
   showHint: function (handType) {
     // Get the modal
     var modal = document.getElementById('myModal');
-    var cheatCard = document.getElementById("cheatCard");
+    var cheatCardImg = document.getElementById("cheatCardImg");
     modal.style.display = "block";
-    cheatCard.src = getCheatCardFileName(handType);
+    cheatCardImg.src = getCheatCardFileName(handType);
     document.getElementById("radio-"+handType).checked = true;
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
@@ -42,7 +42,7 @@ var cheatCard = {
       };
       // var optionClicked = document.getElementById(optionId).checked;
       var cheatCardFileName = getCheatCardFileName(optionMap[optionId]);
-      cheatCard.src = cheatCardFileName;
+      cheatCardImg.src = cheatCardFileName;
     }
 
   }
