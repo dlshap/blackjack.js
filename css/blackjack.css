@@ -74,6 +74,13 @@ input[type='checkbox'] {
   color: White;
 }
 
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
 .btn-split:hover {
   background-color: #cc00cc;
   color: White;

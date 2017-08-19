@@ -19,4 +19,20 @@ function TableUI() {
     };
     document.getElementById(optionMap[whichType]).checked = value;
   }
+
+  this.disable = function (theWidget) {
+    switch (theWidget) {
+      case "splitButton":
+        document.getElementById("split-btn").disabled = true;
+        break;
+      }
+    }
+
+  this.enable = function (theWidget) {
+    switch (theWidget) {
+      case "splitButton":
+        document.getElementById("split-btn").disabled = false;
+        break;
+    }
+  }
 }
