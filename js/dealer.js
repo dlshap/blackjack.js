@@ -22,7 +22,7 @@ var dealer = {
   },
   dealDealerHand: function() {
     // for now, dealer only gets one card
-    var card = this.dealFromShoe()
+    var card = this.dealFromShoe();
     this.dealerHand.addCard(card);
   },
   dealPlayerHand: function() {

@@ -1,3 +1,5 @@
+var player = new Player();  //one player only for now
+
 function optionChanged (optionId) {
   var optionMap = {
     "drill-pairs": "pairs",

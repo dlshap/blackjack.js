@@ -86,7 +86,7 @@ var testCard = {
 
   runTests: function() {
     console.log("testing...");
-    var reTestName = /test[\d+].*/
+    var reTestName = /test[\d+].*/;
     var testProps = Object.getOwnPropertyNames(testCard);
     for (var i in testProps) {
       this.testName = testProps[i];

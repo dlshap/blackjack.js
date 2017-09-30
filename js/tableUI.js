@@ -1,3 +1,5 @@
+"use strict";
+
 var tableUI = new TableUI();
 
 function TableUI() {
@@ -5,11 +7,11 @@ function TableUI() {
     // display msg in message area: msg1 or msg2
     var msgId = "msg"+msgNum.toString();
     document.getElementById(msgId).innerHTML = msg;
-  }
+  };
 
   this.showCard = function(whichCard, cardFileName) {
     document.getElementById(whichCard).src = cardFileName;
-  }
+  };
 
   this.setDrillType = function (whichType, value) {
     var optionMap = {
@@ -18,7 +20,7 @@ function TableUI() {
       soft:"drill-soft"
     };
     document.getElementById(optionMap[whichType]).checked = value;
-  }
+  };
 
   this.disable = function (theWidget) {
     switch (theWidget) {
@@ -26,7 +28,7 @@ function TableUI() {
         document.getElementById("split-btn").disabled = true;
         break;
       }
-    }
+    };
 
   this.enable = function (theWidget) {
     switch (theWidget) {
@@ -36,3 +38,4 @@ function TableUI() {
     }
   }
 }
+

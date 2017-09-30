@@ -10,7 +10,7 @@ function Shoe(numDecks) {
         }
       }
     }
-  }
+  };
   this.shuffle = function() {
     var x, i, j, k;
     for (k = 0; k < config.numOfShuffles; k++) {
@@ -21,20 +21,20 @@ function Shoe(numDecks) {
         shoeCards[j] = x;
       }
     }
-  }
+  };
   this.length = function() {
     return shoeCards.length;
-  }
+  };
   this.addCard = function(card) {
     shoeCards.push(card);
-  }
+  };
   this.getCard = function() {
     if (shoeCards.length === 0) {
       this.loadShoe();
       this.shuffle();
     }
     return shoeCards.pop();
-  }
+  };
   // Constructor
   this.loadShoe();
 }

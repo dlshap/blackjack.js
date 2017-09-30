@@ -10,4 +10,4 @@ var storageMgr = {
     else
       return JSON.parse(strObj);
   }
-}
+};

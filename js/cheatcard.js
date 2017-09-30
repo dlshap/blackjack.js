@@ -13,14 +13,14 @@ var cheatCard = {
         if (event.target == modal) {
             modal.style.display = "none";
         }
-    }
+    };
     // click Done button to close
     document.getElementById("cheatClose").addEventListener("click",
       function() {modal.style.display = "none"; });
     // When the user clicks on <span> (x), close the modal
     span.onclick = function() {
         modal.style.display = "none";
-    }
+    };
     // document.getElementById("cheatTest").addEventListener("click",
     //   function() {testButton(); });
     document.getElementById("radio-pairs").addEventListener("click",
@@ -46,4 +46,4 @@ var cheatCard = {
     }
 
   }
-}
+};

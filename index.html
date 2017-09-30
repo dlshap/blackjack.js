@@ -1,10 +1,15 @@
 <!DOCTYPE html>
+<html lang=""en-US">
+<head>
+  <meta charset=""UTF-8">
+  <title>My Blackjack Tutor</title>
+</head>
 
 <body>
 <link href="vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="css/blackjack.css" rel="stylesheet">
 <link href="css/cheat-card.css" rel="stylesheet">
-<script src="js/storage-mgr.js"></script>
+<script src="js/storagemgr.js"></script>
 <script src="js/config.js"></script>
 <script src="js/strategy.js"></script>
 <script src="js/quiz.js"></script>
@@ -12,14 +17,16 @@
 <script src="js/shoe.js"></script>
 <script src="js/player.js"></script>
 <script src="js/dealer.js"></script>
-<script src="js/drill-dealer.js"></script>
-<script src="js/cheat-card.js"></script>
+<script src="js/drilldealer.js"></script>
+<script src="js/cheatcard.js"></script>
 <script src="js/gamecontroller.js"></script>
-<script src="js/table-ctrl.js"></script>
-<script src="js/tableUI.js"></script>
 <script src="js/card.js"></script>
 <script src="js/blackjack.js"></script>
 <script src="js/test-card.js"></script>
+<script src="js/tableUI.js"></script>
+<script src="js/tableinit.js"></script>
+<script src="js/tablectrl.js"></script>
+<script src="js/index.js"></script>
 
 <div class="box outer-box ">
   <h1 style="text-shadow: 3px 3px grey;"><strong>Blackjack</strong></h1>
@@ -50,16 +57,16 @@
   </div>
 </table>
   <div class="buttons">
-    <button class="btn btn-primary btn-deal" onclick="deal()" accesskey="a">De<u>a</u>l</button>
+    <button id="deal-btn" class="btn btn-primary btn-deal" accesskey="a">De<u>a</u>l</button>
     <div class="choice-buttons">
-      <button id="hit-btn" class="btn btn-success btn-choice" onclick="hit()" accesskey="h"><u>H</u>it Me</button>
-      <button id="stand-btn" class="btn btn-danger btn-choice" onclick="stand()" accesskey="s"><u>S</u>tand</button>
-      <button id="double-btn" class="btn btn-primary btn-choice" onclick="double()" accesskey="b">Dou<u>b</u>le</button>
-      <button id="split-btn" class="btn btn-split btn-choice" onclick="split()" accesskey="p">S<u>p</u>lit</button>
+      <button id="hit-btn" class="btn btn-success btn-choice" accesskey="h"><u>H</u>it Me</button>
+      <button id="stand-btn" class="btn btn-danger btn-choice" accesskey="s"><u>S</u>tand</button>
+      <button id="double-btn" class="btn btn-primary btn-choice" accesskey="b">Dou<u>b</u>le</button>
+      <button id="split-btn" class="btn btn-split btn-choice" accesskey="p">S<u>p</u>lit</button>
     </div>
   </div>
   <div>
-    <button class="btn btn-primary btn-hint btn-choice" onclick="hint()" accesskey="n">Hi<u>n</u>t</button>
+    <button id="hint-btn" class="btn btn-primary btn-hint btn-choice" accesskey="n">Hi<u>n</u>t</button>
   </div>
   <div>
     <div class="drill-types">

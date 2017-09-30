@@ -52,4 +52,4 @@ var drillDealer = {
       hand.addCard(card);
       return hand;
   }
-}
+};
