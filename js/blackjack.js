@@ -3,6 +3,7 @@
 var shoe;  //figure out how to make this local sometime
 
 function blackJack() {
+    initTable();
     prepareShoe();
 }
 
