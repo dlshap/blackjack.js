@@ -5,6 +5,7 @@ var tableUI = new TableUI();
 
 function blackjack() {
     loadScreenElements();
+    startGame();
     prepareShoe();
 }
 
@@ -13,6 +14,10 @@ function loadScreenElements() {
     setInitialDrillTypes();
     preLoadCardImages();
     tableUI.addListeners();
+}
+
+function startGame() {
+    prepareShoe();
 }
 
 function prepareShoe() {
