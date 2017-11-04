@@ -6,7 +6,6 @@ var tableUI = new TableUI();
 function blackjack() {
     loadScreenElements();
     startGame();
-    prepareShoe();
 }
 
 function loadScreenElements() {
