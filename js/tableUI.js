@@ -1,12 +1,39 @@
 "use strict";
 
 function TableUI() {
+
+    this.loadScreenElements = function() {
+        this.showCardBacks();
+        this.preLoadCardImages();
+        this.addListeners();
+    }
+
+    this.showCardBacks = function() {
+        //do this first so no delay on screen
+        var card = new Card(0, 0);
+        card.display("dealerCard");
+        for (var i = 1; i <= 2; i++) {
+            card.display("playerCard" + i);
+        }
+    }
+
     this.addListeners = function () {
         this.addButtonListeners();
         this.addOptionListeners();
     }
 
-    this.showMsg = function (msgNum, msg) {
+    this.preLoadCardImages = function() {
+        var i, j, card;
+        var image = new Image();
+        for (i = 1; i <= 13; i++) {
+            for (j = 1; j <= 4; j++) {
+                card = new Card(i, j);
+                image.src = card.getFileName();
+            }
+        }
+    }
+
+   this.showMsg = function (msgNum, msg) {
         // display msg in message area: msg1 or msg2
         var msgId = "msg" + msgNum.toString();
         document.getElementById(msgId).innerHTML = msg;
