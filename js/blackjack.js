@@ -2,6 +2,8 @@
 
 var shoe;       //figure out how to make this local sometime
 var tableUI;    //ditto
+var player;  //one player only for now
+
 
 function blackjack() {
     initUI();
@@ -16,11 +18,16 @@ function initUI() {
 function startGame() {
     setInitialDrillTypes();
     prepareShoe();
+    addPlayer();
 }
 
 function prepareShoe() {
     shoe = new Shoe(config.numOfDecks);
     shoe.shuffle();
+}
+
+function addPlayer() {
+    player = new Player();
 }
 
 function setInitialDrillTypes() {
