@@ -17,9 +17,9 @@ function Player() {
     hands = [];
   };
   this.setName = function (name) {
-    this.playerName = name;
+    playerName = name;
   };
   this.getName = function () {
-    return this.playerName;
+    return playerName;
   }
 }

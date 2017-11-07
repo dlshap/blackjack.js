@@ -1,7 +1,6 @@
 function Dealer() {
     var dealerHand = new Hand();
     var playerHand = new Hand();
-    this.doofus = 25;
 
     this.deal = function () {
         this.clearHands();
