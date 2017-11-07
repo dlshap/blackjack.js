@@ -1,8 +1,13 @@
 "use strict";
 
+document.addEventListener("DOMContentLoaded", function () {
+    blackjack();
+});
+
 var shoe;       //figure out how to make this local sometime
 var tableUI;    //ditto
-var player;  //one player only for now
+var player;     //one player only for now
+var dealer;     //one dealer only
 
 
 function blackjack() {
@@ -17,8 +22,13 @@ function initUI() {
 
 function startGame() {
     setInitialDrillTypes();
+    addDealer();
     prepareShoe();
     addPlayer();
+}
+
+function addDealer() {
+    dealer = new Dealer();
 }
 
 function prepareShoe() {

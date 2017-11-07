@@ -1,6 +1,6 @@
 var gameController = {
   deal: function() {
-    dealer.deal(player);  //need to get the right player from somewhere
+    dealer.deal();  //need to get the right player from somewhere
     if (player.getHand(0).getType() !== "pairs") {
       tableUI.disable("splitButton");
     } else {
