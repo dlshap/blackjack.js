@@ -1,4 +1,6 @@
 function GameController() {
+    var quiz = new Quiz();
+
     this.deal = function() {
         dealer.deal();  //need to get the right player from somewhere
         if (player.getHand(0).getType() !== "pairs") {
