@@ -1,4 +1,6 @@
 function TableCtrl() {
+    var gameController = new GameController();
+
     this.optionChanged = function(optionId) {
         var optionMap = {
             "drill-pairs": "pairs",
