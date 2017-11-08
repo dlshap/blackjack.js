@@ -16,7 +16,7 @@ function Dealer() {
     };
 
     this.getHand = function () {
-        return this.dealerHand;
+        return dealerHand;
     };
 
     this.clearHands = function () {
@@ -33,7 +33,7 @@ function Dealer() {
 
     this.dealPlayerHand = function () {
         if (config.drillTypes.length() !== 1 && config.drillTypes.length() !== 2) {
-            playerHand = this.dealNormal(this.playerHand);
+            playerHand = this.dealNormal(playerHand);
             player.addHand(playerHand);
         }
         else {
