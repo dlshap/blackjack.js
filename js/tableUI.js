@@ -2,6 +2,8 @@
 
 function TableUI() {
 
+    var tableCtrl = new TableCtrl();
+
     this.loadScreenElements = function() {
         this.showCardBacks();
         this.preLoadCardImages();
@@ -74,42 +76,42 @@ function TableUI() {
         //
         document.getElementById("deal-btn").addEventListener("click",
             function () {
-                deal();
+                tableCtrl.deal();
             });
         document.getElementById("hit-btn").addEventListener("click",
             function () {
-                hit();
+                tableCtrl.hit();
             });
         document.getElementById("stand-btn").addEventListener("click",
             function () {
-                stand();
+                tableCtrl.stand();
             });
         document.getElementById("double-btn").addEventListener("click",
             function () {
-                double();
+                tableCtrl.double();
             });
         document.getElementById("split-btn").addEventListener("click",
             function () {
-                split();
+                tableCtrl.split();
             });
         document.getElementById("hint-btn").addEventListener("click",
             function () {
-                hint();
+                tableCtrl.hint();
             });
     }
 
     this.addOptionListeners = function() {
         document.getElementById("drill-pairs").addEventListener("click",
             function () {
-                optionChanged("drill-pairs");
+                tableCtrl.optionChanged("drill-pairs");
             });
         document.getElementById("drill-hard").addEventListener("click",
             function () {
-                optionChanged("drill-hard");
+                tableCtrl.optionChanged("drill-hard");
             });
         document.getElementById("drill-soft").addEventListener("click",
             function () {
-                optionChanged("drill-soft");
+                tableCtrl.optionChanged("drill-soft");
             });
     }
 }

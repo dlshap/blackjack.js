@@ -1,34 +1,36 @@
-function optionChanged (optionId) {
-  var optionMap = {
-    "drill-pairs": "pairs",
-    "drill-hard": "hard",
-    "drill-soft": "soft"
-  };
-  var optionClicked = document.getElementById(optionId).checked;
-  dealer.changeDrill(optionMap[optionId], optionClicked);
-}
+function TableCtrl() {
+    this.optionChanged = function(optionId) {
+        var optionMap = {
+            "drill-pairs": "pairs",
+            "drill-hard": "hard",
+            "drill-soft": "soft"
+        };
+        var optionClicked = document.getElementById(optionId).checked;
+        dealer.changeDrill(optionMap[optionId], optionClicked);
+    }
 
-function deal() {
-  tableUI.showMsg(1, "Dealing now...");
-  gameController.deal();
-}
+    this.deal = function () {
+        tableUI.showMsg(1, "Dealing now...");
+        gameController.deal();
+    }
 
-function hit() {
-  gameController.hit();
-}
+    this.hit = function() {
+        gameController.hit();
+    }
 
-function stand() {
-  gameController.stand();
-}
+    this.stand = function() {
+        gameController.stand();
+    }
 
-function double() {
-  gameController.double();
-}
+    this.double = function() {
+        gameController.double();
+    }
 
-function split() {
-  gameController.split();
-}
+    this.split = function() {
+        gameController.split();
+    }
 
-function hint() {
-  gameController.hint();
+    this.hint = function() {
+        gameController.hint();
+    }
 }
